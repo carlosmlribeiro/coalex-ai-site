@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { LucideArrowRight, Shield, Zap, BarChart3, Users } from 'lucide-react';
@@ -8,8 +7,31 @@ import CardFeature from '@/components/CardFeature';
 import TestimonialCard from '@/components/TestimonialCard';
 import ProductShowcase from '@/components/ProductShowcase';
 import FeatureScreenshot from '@/components/FeatureScreenshot';
+import Clarity from '@microsoft/clarity';
 
 const Index = () => {
+  useEffect(() => {
+    // Initialize Microsoft Clarity
+    const projectId = "qt81y8a6u9";
+    Clarity.init(projectId);
+
+    // Load HubSpot form
+    const script = document.createElement('script');
+    script.src = '//js.hsforms.net/forms/embed/v2.js';
+    script.async = true;
+    script.onload = () => {
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: '48921270',
+          formId: '5fdfb31e-7bd4-4306-9bde-d59a2621ea4d',
+          region: 'na1',
+          target: '#hubspot-form',
+        });
+      }
+    };
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -19,7 +41,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-              AI Automation Without the Risk—Are You Ready?
+              AI you can Trust
             </h1>
             <p className="text-xl text-gray-600 mb-8 animate-fade-in" style={{ animationDelay: '200ms' }}>
               <strong>You Need AI. But You Can't Afford to Get It Wrong.</strong><br />
@@ -47,18 +69,6 @@ const Index = () => {
               </Button>
             </div>
           </div>
-        </div>
-      </section>
-      
-      {/* Product Preview Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">See Coalex.ai in Action</h2>
-            <p className="text-xl text-gray-600">Powerful tools to manage AI with complete oversight and control</p>
-          </div>
-          
-          <ProductShowcase />
         </div>
       </section>
       
@@ -313,14 +323,8 @@ const Index = () => {
               🚀 Be first. Be safe. Be efficient.
             </p>
             <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                className="bg-white text-primary hover:bg-gray-100 shadow-xl"
-              >
-                Get Started Now
-                <LucideArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              {/* HubSpot Form Embed */}
+              <div id="hubspot-form"></div>
             </div>
           </div>
         </div>
