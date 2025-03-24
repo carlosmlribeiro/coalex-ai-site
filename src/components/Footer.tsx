@@ -10,8 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg">C</div>
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-600">Coalex.ai</span>
+              <img src="/lovable-uploads/f0cd8810-690a-4654-9357-85f55646c929.png" alt="Coalex.ai" className="h-8" />
             </div>
             <p className="text-gray-600 max-w-xs">
               AI-powered automation with human oversight, so you can scale AI confidently.

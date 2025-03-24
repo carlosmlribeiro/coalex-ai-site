@@ -30,8 +30,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <a href="#" className="flex items-center space-x-2">
-            <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg">C</div>
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-600">Coalex.ai</span>
+            <img src="/lovable-uploads/f0cd8810-690a-4654-9357-85f55646c929.png" alt="Coalex.ai" className="h-9" />
           </a>
           
           <nav className="hidden md:flex items-center space-x-8">
