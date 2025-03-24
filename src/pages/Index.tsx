@@ -6,6 +6,8 @@ import { LucideArrowRight, Shield, Zap, BarChart3, Users } from 'lucide-react';
 import Button from '@/components/Button';
 import CardFeature from '@/components/CardFeature';
 import TestimonialCard from '@/components/TestimonialCard';
+import ProductShowcase from '@/components/ProductShowcase';
+import FeatureScreenshot from '@/components/FeatureScreenshot';
 
 const Index = () => {
   return (
@@ -48,8 +50,20 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Product Preview Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">See Coalex.ai in Action</h2>
+            <p className="text-xl text-gray-600">Powerful tools to manage AI with complete oversight and control</p>
+          </div>
+          
+          <ProductShowcase />
+        </div>
+      </section>
+      
       {/* Problems Section */}
-      <section id="problems" className="py-20 bg-gray-50">
+      <section id="problems" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">❌ Most AI Solutions Are a Compliance Disaster</h2>
@@ -75,6 +89,19 @@ const Index = () => {
             </div>
           </div>
           
+          <div className="mt-20">
+            <FeatureScreenshot 
+              imageSrc="/lovable-uploads/07a83a36-31dc-4c32-99ac-c9be36722469.png"
+              title="Complete Human Oversight"
+              description="Our conversation interface gives your team perfect visibility into every AI interaction, with the ability to approve, modify, or reject responses before they reach customers."
+              highlightMetric={{
+                value: "98%",
+                label: "compliance accuracy with human oversight"
+              }}
+              ctaText="See How It Works"
+            />
+          </div>
+          
           <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '700ms' }}>
             <p className="text-lg font-bold text-gray-800 mb-4">⏳ How long can you afford to risk bad AI decisions?</p>
             <Button href="#cta">
@@ -86,7 +113,7 @@ const Index = () => {
       </section>
       
       {/* Solution Section */}
-      <section id="solution" className="py-20 bg-white">
+      <section id="solution" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">💡 The Smartest Companies Take a Smarter Approach to AI</h2>
@@ -116,6 +143,16 @@ const Index = () => {
             />
           </div>
           
+          <div className="mt-20">
+            <FeatureScreenshot 
+              imageSrc="/lovable-uploads/470a2477-3386-456e-8286-4db1b6e5cbd2.png"
+              title="Complete AI Agent Management"
+              description="Monitor all your AI agents in one place. Track performance, accuracy, and training progress with intuitive controls to manage every aspect of your AI workforce."
+              alignment="right"
+              ctaText="Explore AI Management"
+            />
+          </div>
+          
           <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '700ms' }}>
             <p className="text-lg font-bold text-gray-800 mb-4">No black-box AI. No reckless automation. Just results.</p>
             <Button href="#cta">
@@ -127,11 +164,24 @@ const Index = () => {
       </section>
       
       {/* Benefits Section */}
-      <section id="benefits" className="py-20 bg-gray-50">
+      <section id="benefits" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">📈 AI That Works For You—Not Against You</h2>
             <p className="text-xl text-gray-600">With Coalex.ai, You'll See These Outcomes:</p>
+          </div>
+          
+          <div className="mt-12 mb-20">
+            <FeatureScreenshot 
+              imageSrc="/lovable-uploads/85ac0ea7-62be-4f01-a21d-c57fa4c1e1ae.png"
+              title="Comprehensive Analytics & Reporting"
+              description="Get a complete view of your AI operations with detailed metrics, industry breakdowns, and performance trends—all in one intuitive dashboard."
+              highlightMetric={{
+                value: "40%",
+                label: "efficiency gains while maintaining oversight"
+              }}
+              ctaText="See Analytics In Action"
+            />
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -187,7 +237,7 @@ const Index = () => {
       </section>
       
       {/* Challenge Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">💥 The Challenge: Are You Leading or Falling Behind?</h2>
@@ -220,7 +270,7 @@ const Index = () => {
       </section>
       
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 bg-gray-50">
+      <section id="testimonials" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">🚀 Trusted By Industry Leaders</h2>
