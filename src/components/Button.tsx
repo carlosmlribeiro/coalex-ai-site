@@ -18,7 +18,7 @@ const Button = ({
   className,
   ...props
 }: ButtonProps) => {
-  const baseStyles = "relative font-semibold rounded-full inline-flex items-center justify-center transition-all duration-300 ease-out overflow-hidden";
+  const baseStyles = "relative font-semibold rounded-full inline-flex items-center justify-center transition-all duration-300 ease-out overflow-hidden whitespace-nowrap";
   
   const variants = {
     primary: "bg-primary text-white hover:bg-primary-600 shadow-md hover:shadow-lg",
@@ -43,7 +43,7 @@ const Button = ({
   if (href) {
     return (
       <a href={href} className={buttonClasses}>
-        <span className="relative z-10">{children}</span>
+        <span className="relative z-10 flex items-center">{children}</span>
         <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
       </a>
     );
@@ -51,7 +51,7 @@ const Button = ({
 
   return (
     <button className={buttonClasses} {...props}>
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 flex items-center">{children}</span>
       <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
     </button>
   );
