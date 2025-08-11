@@ -66,12 +66,13 @@ const FeatureScreenshot = ({
             <img 
               src={imageSrc} 
               alt={title} 
+              loading="lazy"
               className="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
             />
             
-            {/* Partial mask that reveals on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/70 opacity-60 group-hover:opacity-0 transition-opacity duration-500" />
-            
+            {/* Partial mask that reveals on hover (peek effect) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/40 to-white/80 opacity-70 group-hover:opacity-0 transition-opacity duration-500" />
+
             {/* Additional highlight effect */}
             <div className="absolute -inset-px border-2 border-primary/40 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>

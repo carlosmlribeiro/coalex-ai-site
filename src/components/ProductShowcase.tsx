@@ -17,6 +17,7 @@ const ProductShowcase = ({ className }: ProductShowcaseProps) => {
               <img 
                 src="/lovable-uploads/85ac0ea7-62be-4f01-a21d-c57fa4c1e1ae.png" 
                 alt="Coalex.ai Analytics Dashboard" 
+                loading="lazy"
                 className="w-full h-auto" 
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-6">
@@ -31,6 +32,7 @@ const ProductShowcase = ({ className }: ProductShowcaseProps) => {
               <img 
                 src="/lovable-uploads/470a2477-3386-456e-8286-4db1b6e5cbd2.png" 
                 alt="Coalex.ai AI Agents Management" 
+                loading="lazy"
                 className="w-full h-auto" 
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-6">
@@ -45,6 +47,7 @@ const ProductShowcase = ({ className }: ProductShowcaseProps) => {
               <img 
                 src="/lovable-uploads/07a83a36-31dc-4c32-99ac-c9be36722469.png" 
                 alt="Coalex.ai Agent Conversation Interface" 
+                loading="lazy"
                 className="w-full h-auto" 
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-6">
