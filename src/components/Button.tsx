@@ -18,7 +18,7 @@ const Button = ({
   className,
   ...props
 }: ButtonProps) => {
-  const baseStyles = "relative font-semibold rounded-full inline-flex items-center justify-center transition-all duration-300 ease-out overflow-hidden whitespace-nowrap";
+  const baseStyles = "relative font-semibold rounded-full inline-flex items-center justify-center gap-2 transition-all duration-300 ease-out overflow-hidden whitespace-nowrap";
   
   const variants = {
     primary: "bg-primary text-white hover:bg-primary-600 shadow-md hover:shadow-lg",

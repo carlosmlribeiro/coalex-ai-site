@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProductShowcase from '@/components/ProductShowcase';
 import FeatureScreenshot from '@/components/FeatureScreenshot';
-import Clarity from '@microsoft/clarity';
+
 
 import Hero from '@/sections/Hero';
 import WhyCoalex from '@/sections/WhyCoalex';
@@ -18,10 +18,14 @@ import GetStarted from '@/sections/GetStarted';
 
 const Index = () => {
   useEffect(() => {
-    // Initialize Microsoft Clarity
+    // Initialize Microsoft Clarity (browser-only, safe)
     const projectId = "qt81y8a6u9";
-    Clarity.init(projectId);
-
+    import('@microsoft/clarity')
+      .then((m) => {
+        const clarity = (m as any).default ?? (m as any);
+        clarity?.init?.(projectId);
+      })
+      .catch(() => { /* noop */ });
     // Load HubSpot form
     const script = document.createElement('script');
     script.src = '//js.hsforms.net/forms/embed/v2.js';
