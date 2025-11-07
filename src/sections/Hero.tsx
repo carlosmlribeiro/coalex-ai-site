@@ -15,13 +15,10 @@ const Hero = () => {
         <p className="text-lg text-gray-600 mb-8">
           Move AI pilots into production faster — with live oversight, measurable impact, and continuous improvement.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button href="/demo" size="lg">
+        <div className="flex justify-center">
+          <Button href="#get-started" size="lg">
             Get a demo
             <LucideArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button href="#contact" variant="outline" size="lg">
-            Request trial / Join as design partner
           </Button>
         </div>
       </div>
