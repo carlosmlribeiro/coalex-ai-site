@@ -34,13 +34,13 @@ const Navbar = () => {
           </a>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#problems" className="text-gray-700 hover:text-primary transition-colors">Problems</a>
-            <a href="#solution" className="text-gray-700 hover:text-primary transition-colors">Solution</a>
-            <a href="#benefits" className="text-gray-700 hover:text-primary transition-colors">Benefits</a>
-            <a href="#testimonials" className="text-gray-700 hover:text-primary transition-colors">Testimonials</a>
+            <a href="#why-coalex" className="text-gray-700 hover:text-primary transition-colors">Why Coalex</a>
+            <a href="#how-it-works" className="text-gray-700 hover:text-primary transition-colors">How it Works</a>
+            <a href="#core-features" className="text-gray-700 hover:text-primary transition-colors">Features</a>
+            <a href="#customers-traction" className="text-gray-700 hover:text-primary transition-colors">Customers</a>
           </nav>
           
-          <Button href="#cta" variant="primary">Get Early Access</Button>
+          <Button href="#get-started" variant="primary">Get a Demo</Button>
         </div>
       </div>
     </header>
