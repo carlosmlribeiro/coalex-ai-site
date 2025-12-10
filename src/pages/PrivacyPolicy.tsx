@@ -60,8 +60,8 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-semibold mb-4">6. Contact Us</h2>
               <p className="text-gray-700 mb-4">
                 If you have any questions about this Privacy Policy, please contact us at:{' '}
-                <a href="mailto:founders@coalex.ai" className="text-primary hover:underline">
-                  founders@coalex.ai
+                <a href="mailto:carlos@coalex.ai" className="text-primary hover:underline">
+                  carlos@coalex.ai
                 </a>
               </p>
             </section>

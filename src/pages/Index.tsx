@@ -6,18 +6,13 @@ import FeatureScreenshot from '@/components/FeatureScreenshot';
 
 
 import Hero from '@/sections/Hero';
-import Problem from '@/sections/Problem';
 import WhyCoalex from '@/sections/WhyCoalex';
 import HowItWorks from '@/sections/HowItWorks';
-import ThreeOutcomes from '@/sections/ThreeOutcomes';
 import CoreFeatures from '@/sections/CoreFeatures';
-import ComparisonTable from '@/sections/ComparisonTable';
-import Testimonials from '@/sections/Testimonials';
 import Integrations from '@/sections/Integrations';
 import UseCases from '@/sections/UseCases';
 import WhyChoose from '@/sections/WhyChoose';
 import CustomersTraction from '@/sections/CustomersTraction';
-import FAQ from '@/sections/FAQ';
 import SecurityCompliance from '@/sections/SecurityCompliance';
 import GetStarted from '@/sections/GetStarted';
 
@@ -54,7 +49,6 @@ const Index = () => {
 
       <main>
         <Hero />
-        <Problem />
         <WhyCoalex />
         <HowItWorks />
 
@@ -85,10 +79,7 @@ const Index = () => {
           </div>
         </section>
 
-        <ThreeOutcomes />
         <CoreFeatures />
-        <ComparisonTable />
-        <Testimonials />
         <Integrations />
         <UseCases />
         <WhyChoose />
@@ -105,7 +96,6 @@ const Index = () => {
           </div>
         </section>
 
-        <FAQ />
         <SecurityCompliance />
         <GetStarted />
       </main>
