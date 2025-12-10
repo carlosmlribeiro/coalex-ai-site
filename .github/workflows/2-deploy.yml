@@ -1,9 +1,9 @@
 name: Deploy Website
 
 on:
-  # Auto-deploy to staging on push to main
+  # Auto-deploy to staging on push to redesign-staging branch
   push:
-    branches: [main]
+    branches: [redesign-staging]
 
   # Manual deploy to production
   workflow_dispatch:
