@@ -33,14 +33,16 @@ const Navbar = () => {
             <img src="/lovable-uploads/bf579de7-1547-4385-ab45-457cb415c237.png" alt="Coalex.ai" className="h-9" />
           </a>
           
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#why-coalex" className="text-gray-700 hover:text-primary transition-colors">Why Coalex</a>
-            <a href="#how-it-works" className="text-gray-700 hover:text-primary transition-colors">How it Works</a>
-            <a href="#core-features" className="text-gray-700 hover:text-primary transition-colors">Features</a>
-            <a href="#customers-traction" className="text-gray-700 hover:text-primary transition-colors">Customers</a>
+          <nav className="hidden md:flex items-center space-x-6">
+            <a href="#problem" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">The Problem</a>
+            <a href="#why" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">Solution</a>
+            <a href="#outcomes" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">Benefits</a>
+            <a href="#comparison" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">Why Different</a>
+            <a href="#testimonials" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">Testimonials</a>
+            <a href="#faq" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">FAQ</a>
           </nav>
-          
-          <Button href="#get-started" variant="primary">Get a Demo</Button>
+
+          <Button href="#contact" variant="primary">Get Started</Button>
         </div>
       </div>
     </header>
