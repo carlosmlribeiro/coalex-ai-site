@@ -1,25 +1,22 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ProductShowcase from '@/components/ProductShowcase';
-import FeatureScreenshot from '@/components/FeatureScreenshot';
 
-
+// New redesigned sections
 import Hero from '@/sections/Hero';
+import TrustBar from '@/sections/TrustBar';
 import Problem from '@/sections/Problem';
-import WhyCoalex from '@/sections/WhyCoalex';
+import ThreeLayers from '@/sections/ThreeLayers';
+import SalesAccelerator from '@/sections/SalesAccelerator';
+import TrustCenter from '@/sections/TrustCenter';
+import AICompliance from '@/sections/AICompliance';
+import FreeForDevs from '@/sections/FreeForDevs';
+import DifyPartnership from '@/sections/DifyPartnership';
 import HowItWorks from '@/sections/HowItWorks';
-import ThreeOutcomes from '@/sections/ThreeOutcomes';
-import CoreFeatures from '@/sections/CoreFeatures';
-import ComparisonTable from '@/sections/ComparisonTable';
-import Testimonials from '@/sections/Testimonials';
-import Integrations from '@/sections/Integrations';
-import UseCases from '@/sections/UseCases';
-import WhyChoose from '@/sections/WhyChoose';
-import CustomersTraction from '@/sections/CustomersTraction';
-import FAQ from '@/sections/FAQ';
+import TrustedCustomers from '@/sections/TrustedCustomers';
+import Pricing from '@/sections/Pricing';
 import SecurityCompliance from '@/sections/SecurityCompliance';
-import GetStarted from '@/sections/GetStarted';
+import GetStartedCTA from '@/sections/GetStartedCTA';
 
 const Index = () => {
   useEffect(() => {
@@ -31,6 +28,7 @@ const Index = () => {
         clarity?.init?.(projectId);
       })
       .catch(() => { /* noop */ });
+
     // Load HubSpot form
     const script = document.createElement('script');
     script.src = '//js.hsforms.net/forms/embed/v2.js';
@@ -53,61 +51,47 @@ const Index = () => {
       <Navbar />
 
       <main>
+        {/* 1. Hero Section - Main headline and CTAs */}
         <Hero />
+
+        {/* 2. Trust Bar - Customer logos and social proof */}
+        {/* <TrustBar /> */}
+
+        {/* 3. Problem Section - AI Purgatory */}
         <Problem />
-        <WhyCoalex />
+
+        {/* 4. Three Layers Solution - Supervise/Trust/Comply */}
+        <ThreeLayers />
+
+        {/* 5. Sales Accelerator - Deal drag pitch */}
+        <SalesAccelerator />
+
+        {/* 6. Trust Center Feature - Public Trust Page */}
+        <TrustCenter />
+
+        {/* 6b. AI Compliance Frameworks - ISO 42001 & EU AI Act */}
+        <AICompliance />
+
+        {/* 7. Free for Developers */}
+        <FreeForDevs />
+
+        {/* 8. Partnership Section */}
+        <DifyPartnership />
+
+        {/* 9. How It Works - 4-step flow */}
         <HowItWorks />
 
-        {/* Screenshot sections to showcase capabilities with partial reveal */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <FeatureScreenshot
-              imageSrc="/lovable-uploads/07a83a36-31dc-4c32-99ac-c9be36722469.png"
-              title="Human-in-the-Loop Task Engine"
-              description="Lightweight task UI that surfaces just the right context to reviewers. Route critical outputs for approval and capture structured feedback."
-              highlightMetric={{ value: '100%', label: 'traceability on reviewed actions' }}
-              ctaText="See the task flow"
-            />
-          </div>
-        </section>
+        {/* 10. Trusted Customers - Logos + testimonials */}
+        {/* <TrustedCustomers /> */}
 
-        <ProductShowcase />
+        {/* 11. Pricing Section - 3-tier pricing */}
+        <Pricing />
 
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <FeatureScreenshot
-              imageSrc="/lovable-uploads/85ac0ea7-62be-4f01-a21d-c57fa4c1e1ae.png"
-              title="Real-time Insights"
-              description="Correlate human actions with model accuracy and business KPIs. Track clicks, conversions and revenue impact as models improve."
-              alignment="right"
-              ctaText="Explore insights"
-            />
-          </div>
-        </section>
-
-        <ThreeOutcomes />
-        <CoreFeatures />
-        <ComparisonTable />
-        <Testimonials />
-        <Integrations />
-        <UseCases />
-        <WhyChoose />
-        <CustomersTraction />
-
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <FeatureScreenshot
-              imageSrc="/lovable-uploads/470a2477-3386-456e-8286-4db1b6e5cbd2.png"
-              title="Compliance & Audit Trails"
-              description="Immutable approval records, versioned decisions and exportable evidence for audits."
-              ctaText="Review compliance view"
-            />
-          </div>
-        </section>
-
-        <FAQ />
+        {/* 12. Security & Compliance Badges */}
         <SecurityCompliance />
-        <GetStarted />
+
+        {/* 13. Final CTA Section */}
+        <GetStartedCTA />
       </main>
 
       <Footer />

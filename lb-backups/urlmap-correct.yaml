@@ -1,0 +1,20 @@
+name: coalex-collector-urlmap
+defaultService: https://www.googleapis.com/compute/v1/projects/coalex-ai/global/backendServices/coalex-collector-backend
+hostRules:
+- hosts:
+  - coalex.carlos-ribeiro.me
+  pathMatcher: staging-matcher
+- hosts:
+  - docs.coalex.ai
+  pathMatcher: docs-matcher
+- hosts:
+  - traces.coalex.ai
+  - creator.coalex.ai
+  pathMatcher: default-matcher
+pathMatchers:
+- name: staging-matcher
+  defaultService: https://www.googleapis.com/compute/v1/projects/coalex-ai/global/backendBuckets/coalex-staging-website-backend
+- name: docs-matcher
+  defaultService: https://www.googleapis.com/compute/v1/projects/coalex-ai/global/backendBuckets/coalex-ai-docs-backend
+- name: default-matcher
+  defaultService: https://www.googleapis.com/compute/v1/projects/coalex-ai/global/backendServices/coalex-collector-backend

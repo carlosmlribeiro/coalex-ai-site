@@ -1,0 +1,79 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY_STAGING }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Deploy to Cloud Storage
+        run: |
+          # Sync files to bucket
+          gsutil -m rsync -r -d dist/ gs://coalex-staging-website
+
+          # Set cache control headers
+          gsutil -m setmeta -h "Cache-Control:public, max-age=300" \
+            "gs://coalex-staging-website/**/*.html"
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" \
+            "gs://coalex-staging-website/**/*.{js,css,png,jpg,svg,ico,woff,woff2}"
+
+      - name: Comment on commit with staging URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const message = `✅ Deployed to staging!
+
+            **Staging URL:** https://storage.googleapis.com/coalex-staging-website/index.html
+
+            📝 Review the changes and approve for production deployment.`;
+
+            github.rest.repos.createCommitComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.sha,
+              body: message
+            });

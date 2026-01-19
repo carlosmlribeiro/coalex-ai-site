@@ -1,0 +1,155 @@
+name: Deploy to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Type "deploy-to-production" to confirm'
+        required: true
+        type: string
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify confirmation
+        run: |
+          if [ "${{ github.event.inputs.confirmation }}" != "deploy-to-production" ]; then
+            echo "❌ Confirmation text does not match. Deployment cancelled."
+            exit 1
+          fi
+          echo "✅ Confirmation verified. Proceeding with production deployment."
+
+  build:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 30
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY_PROD }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Backup current production
+        run: |
+          BACKUP_NAME="backup-$(date +'%Y%m%d-%H%M%S')"
+          gsutil -m cp -r gs://coalex-prod-website gs://coalex-prod-backups/$BACKUP_NAME
+          echo "Backup created: $BACKUP_NAME"
+
+      - name: Deploy to Cloud Storage
+        run: |
+          # Sync files to bucket
+          gsutil -m rsync -r -d dist/ gs://coalex-prod-website
+
+          # Set cache control headers for HTML (short cache)
+          gsutil -m setmeta -h "Cache-Control:public, max-age=300" \
+            "gs://coalex-prod-website/**/*.html"
+
+          # Set cache control headers for assets (long cache)
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000, immutable" \
+            "gs://coalex-prod-website/**/*.{js,css,png,jpg,svg,ico,woff,woff2}"
+
+          echo "✅ Deployed to production bucket (using existing load balancer)"
+
+      - name: Create deployment tag
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const tagName = `v${new Date().toISOString().split('T')[0]}-${context.runNumber}`;
+
+            await github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${tagName}`,
+              sha: context.sha
+            });
+
+            console.log(`✅ Created deployment tag: ${tagName}`);
+
+      - name: Create deployment issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deploymentInfo = `🚀 **Production Deployment Successful**
+
+            **Deployed by:** @${{ github.actor }}
+            **Commit:** ${{ github.sha }}
+            **Workflow:** ${{ github.run_id }}
+            **Time:** ${new Date().toISOString()}
+
+            **Production URL:** https://coalex.ai
+
+            ---
+
+            ### Verification Checklist
+            - [ ] Homepage loads correctly
+            - [ ] All CTAs working (Book Demo, Join Waitlist)
+            - [ ] Forms submitting correctly
+            - [ ] Analytics tracking (Clarity, HubSpot)
+            - [ ] Mobile responsive
+            - [ ] All links working
+
+            ### Rollback Instructions
+            If issues occur, restore from backup:
+            \`\`\`bash
+            gsutil -m rsync -r gs://coalex-prod-backups/backup-* gs://coalex-prod-website
+            \`\`\`
+            `;
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Production Deployment - ${new Date().toISOString().split('T')[0]}`,
+              body: deploymentInfo,
+              labels: ['deployment', 'production']
+            });
+
+      - name: Notify on success
+        if: success()
+        run: |
+          echo "✅ Production deployment completed successfully!"
+          echo "🌐 Site is live at: https://coalex.ai"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ Production deployment failed!"
+          echo "Check the logs above for details."
+          exit 1

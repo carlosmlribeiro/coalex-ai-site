@@ -1,0 +1,87 @@
+import React from 'react';
+import Button from '@/components/Button';
+import { ArrowRight, Rocket, Code, Shield, Zap, CreditCard } from 'lucide-react';
+
+const FreeForDevs = () => {
+  const features = [
+    {
+      icon: Code,
+      title: '1 Agent, Forever Free',
+      description: 'Full supervision capabilities for your first AI agent',
+    },
+    {
+      icon: Shield,
+      title: 'Full Governance',
+      description: 'Human-in-the-loop, monitoring, and audit logs included',
+    },
+    {
+      icon: Zap,
+      title: 'Easy Integration',
+      description: 'SDK integration in minutes, not days',
+    },
+    {
+      icon: CreditCard,
+      title: 'No Credit Card',
+      description: 'Start building trust from day one, no strings attached',
+    },
+  ];
+
+  return (
+    <section id="free-tier" className="py-20 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl -translate-y-1/2" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <div className="glass-card p-8 md:p-12 border border-primary-500/20 glow-primary">
+            <div className="flex flex-col md:flex-row md:items-center gap-8">
+              {/* Left: Content */}
+              <div className="md:w-1/2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6">
+                  <Rocket className="h-4 w-4 text-primary-400" />
+                  <span className="text-xs text-primary-400 font-medium uppercase tracking-wider">For Developers</span>
+                </div>
+
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
+                  Start Supervising{' '}
+                  <span className="gradient-text">for Free</span>
+                </h2>
+
+                <p className="text-xl text-slate-600 dark:text-slate-300 mb-8">
+                  Build trust from day one. Get full supervision capabilities for your first AI agent,
+                  completely free — forever.
+                </p>
+
+                <Button href="#pricing" size="lg" className="glow-primary">
+                  Get Started Free
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+
+              {/* Right: Features Grid */}
+              <div className="md:w-1/2">
+                <div className="grid grid-cols-2 gap-4">
+                  {features.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="p-4 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-500/30 transition-colors"
+                    >
+                      <div className="p-2 rounded-lg bg-primary-500/10 inline-flex mb-3">
+                        <feature.icon className="h-5 w-5 text-primary-400" />
+                      </div>
+                      <h4 className="text-slate-900 dark:text-white font-semibold mb-1 text-sm">{feature.title}</h4>
+                      <p className="text-slate-500 dark:text-slate-400 text-xs">{feature.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FreeForDevs;
