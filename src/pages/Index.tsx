@@ -20,14 +20,34 @@ import GetStartedCTA from '@/sections/GetStartedCTA';
 
 const Index = () => {
   useEffect(() => {
-    // Initialize Microsoft Clarity (browser-only, safe)
-    const projectId = "qt81y8a6u9";
-    import('@microsoft/clarity')
-      .then((m) => {
-        const clarity = (m as any).default ?? (m as any);
-        clarity?.init?.(projectId);
-      })
-      .catch(() => { /* noop */ });
+    // Initialize Microsoft Clarity
+    const clarityId = import.meta.env.VITE_CLARITY_PROJECT_ID;
+    if (clarityId) {
+      import('@microsoft/clarity')
+        .then((m) => {
+          const clarity = (m as any).default ?? (m as any);
+          clarity?.init?.(clarityId);
+        })
+        .catch(() => { /* noop */ });
+    }
+
+    // Initialize Google Analytics 4
+    const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+    if (gaId) {
+      // Load gtag.js script
+      const gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+      document.head.appendChild(gtagScript);
+
+      // Initialize gtag
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+      }
+      gtag('js', new Date());
+      gtag('config', gaId);
+    }
 
     // Load HubSpot form
     const script = document.createElement('script');
