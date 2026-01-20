@@ -102,23 +102,22 @@ const TrustCenter = () => {
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-                Your AI's{' '}
-                <span className="gradient-text">Public Trust Page</span>
+                Stop Explaining.{' '}
+                <span className="gradient-text">Start Proving.</span>
               </h2>
 
               <p className="text-xl text-slate-600 dark:text-slate-300 mb-8">
-                Give prospects a live view of your AI's health, compliance status, and human oversight metrics.
-                Skip the security questionnaires.
+                Your prospects want proof your AI is safe. Give them a page that answers every question before they ask.
               </p>
 
               <div className="space-y-4 mb-8">
                 {[
-                  { icon: Activity, text: 'Live Health Score visible to prospects' },
-                  { icon: Shield, text: 'Compliance badges (ISO 42001, EU AI Act, SOC 2, GDPR)' },
-                  { icon: FileCheck, text: 'HITL metrics showing human oversight levels' },
-                  { icon: Link, text: 'Magic Links for secure document sharing' },
-                  { icon: Globe, text: 'Custom domain support (trust.yourcompany.com)' },
-                  { icon: ExternalLink, text: 'Skip follow-up questionnaires entirely' },
+                  { icon: Activity, text: 'Prospects verify AI reliability themselves — no meeting required' },
+                  { icon: Shield, text: 'Compliance status visible in real-time — no emails' },
+                  { icon: FileCheck, text: 'HITL metrics proving human oversight is in place' },
+                  { icon: Link, text: 'Share sensitive docs securely — skip the NDA dance' },
+                  { icon: Globe, text: 'Custom domain (trust.yourcompany.com) for credibility' },
+                  { icon: ExternalLink, text: 'Eliminate 90% of security questionnaire back-and-forth' },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-primary-500/10 border border-primary-500/20">

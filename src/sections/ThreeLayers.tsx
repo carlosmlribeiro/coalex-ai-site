@@ -5,41 +5,41 @@ const ThreeLayers = () => {
   const layers = [
     {
       title: 'Supervise',
-      subtitle: 'Human-in-the-Loop Control',
-      description: 'Keep humans in control of AI decisions that matter most',
+      subtitle: 'AI makes decisions you can\'t see',
+      description: 'See every decision. Intervene when it matters.',
       color: 'primary',
       gradient: 'from-primary-500 to-primary-400',
       bgGlow: 'bg-primary-500/20',
       features: [
-        { icon: Users, text: 'Human-in-the-loop for low-confidence decisions' },
-        { icon: Activity, text: 'Real-time monitoring dashboard' },
-        { icon: Bell, text: 'Intervention workflows & alerts' },
+        { icon: Users, text: 'Flag low-confidence outputs before they reach customers' },
+        { icon: Activity, text: 'Route risky decisions to the right reviewer' },
+        { icon: Bell, text: 'Get alerted when AI goes off-script' },
       ],
     },
     {
       title: 'Trust',
-      subtitle: 'Measurable AI Reliability',
-      description: 'Prove your agent is reliable, not just compliant',
+      subtitle: 'Prospects don\'t trust your AI',
+      description: 'Give them proof, not promises.',
       color: 'accent',
       gradient: 'from-accent to-purple-400',
       bgGlow: 'bg-accent/20',
       features: [
-        { icon: Award, text: 'Health Score: Safety, Consistency, Oversight, Stability' },
-        { icon: Globe, text: 'Public Trust Center for your customers' },
-        { icon: Shield, text: 'Continuous trust verification' },
+        { icon: Award, text: 'Publish live health scores your customers can verify' },
+        { icon: Globe, text: 'Share compliance status without meetings' },
+        { icon: Shield, text: 'Turn trust into a sales asset, not a blocker' },
       ],
     },
     {
       title: 'Comply',
-      subtitle: 'Audit-Ready Governance',
-      description: 'Meet regulations without slowing down innovation',
+      subtitle: 'Regulations are coming. You\'re not ready.',
+      description: 'Ship compliant. Stay compliant.',
       color: 'secondary',
       gradient: 'from-secondary-500 to-blue-400',
       bgGlow: 'bg-secondary-500/20',
       features: [
-        { icon: ScrollText, text: 'Immutable audit logs & evidence' },
-        { icon: FileCheck, text: 'ISO 42001 & EU AI Act ready' },
-        { icon: Eye, text: 'Cross-framework evidence reuse' },
+        { icon: ScrollText, text: 'Collect evidence automatically as you operate' },
+        { icon: FileCheck, text: 'Map controls to ISO 42001, EU AI Act, SOC 2' },
+        { icon: Eye, text: 'Export audit packages in one click' },
       ],
     },
   ];
@@ -54,11 +54,11 @@ const ThreeLayers = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-              Three Layers of{' '}
-              <span className="gradient-text">Trust</span>
+              Three Problems.{' '}
+              <span className="gradient-text">One Platform.</span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              A complete governance stack that transforms AI pilots into production-ready systems
+              Your AI is live but uncontrolled, untrusted, and uncompliant. Fix all three.
             </p>
           </div>
 

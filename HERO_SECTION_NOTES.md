@@ -1,81 +1,74 @@
 # Hero Section Brainstorm & Implementation Notes
 
-## Current Implementation
+## Current Implementation (Updated with Feedback)
+
+### Philosophy
+**Problem first, solution second. Create urgency. Make the buyer feel seen.**
+
+### Badge
+"Your AI is in production. Is it under control?" (red, pulsing)
 
 ### Headlines
-- **Main**: "Trusted AI with Verifiable Compliance."
-- **Subheadline**: "Automatic governance. Automatic compliance."
+- **Main**: "AI is live. Risk is invisible."
+- **Subheadline**: "Make AI behavior visible, controlled, and audit-ready."
+- **Supporting**: "Policy enforcement and audit trails for LLM apps."
 
-### Value Props (3 bullets)
-1. Three lines of code integration
-2. Human-in-the-loop built-in
-3. EU AI Act ready
+### Value Props (Outcomes with Verbs)
+1. Detect policy violations in real time
+2. Route risky outputs for human approval
+3. Export audit-ready evidence on demand
 
-### CTAs
-- Primary: "Start Free" → links to #pricing
-- Secondary: "Book a Demo" → links to #contact
+### Dashboard Mock (Show Proof)
+| Metric | Value | Indicator |
+|--------|-------|-----------|
+| Violations Detected | 23 | Red - This week |
+| Approvals Logged | 847 | Green - 100% tracked |
+| Controls Enforced | 12 | Primary - Active policies |
+| Evidence Exported | 3 | Blue - Audit reports |
 
-### Dashboard Mockup
-Shows a simulated Coalex dashboard with:
-- AI Health Score (94/100)
-- Active Agents count (12)
-- Pending Reviews (3)
-- Agent list with health percentages
-
-### Partner Logos ("Backed by")
-Theme-aware logos displayed at bottom:
-
-| Partner | Dark Theme | Light Theme |
-|---------|------------|-------------|
-| Google for Startups | `google.png` | `google-dark.png` |
-| Fintech House | `fintech-house.svg` | same |
-| Unicorn Factory Lisboa | `ufl.png` | `ufl-dark.png` |
-| NVIDIA Inception | `nvidia.png` | same |
-| IPN | `ipn.png` | `ipn-dark.png` |
+**Recent Activity Feed:**
+- Policy violation blocked (Customer Support Bot) - 2m ago
+- Human approval completed (Sales Assistant) - 5m ago
+- Audit evidence exported (All agents) - 1h ago
 
 ---
 
-## Design Decisions
+## Key Feedback Applied
 
-### Theme Support
-- Dark theme: Default, dark backgrounds with light text
-- Light theme: Light backgrounds with dark text
-- System preference detection via `next-themes`
+### ❌ Removed (Abstract/Passive)
+- "Trusted AI"
+- "Verifiable Compliance"
+- "Automatic compliance"
+- "EU AI Act ready"
+- "Three lines of code integration"
+- "Human-in-the-loop built-in"
 
-### Partner Logo Sizing
-- Consistent height: `h-10` (40px)
-- Variable widths for visual balance
-- `object-contain` to maintain aspect ratios
-- Hover effect: opacity 60% → 100%
+### ✅ Added (Concrete/Active)
+- Problem-first headline (risk, exposure)
+- Verbs instead of adjectives
+- Specific outcomes (detect, route, export)
+- Proof metrics in dashboard (violations, approvals, controls, evidence)
+- Urgency in badge
 
-### Visual Elements
-- Badge: "AI Governance Platform" with pulsing dot
-- Background: Grid pattern with gradient blurs (primary green, accent purple)
-- Glass card effect on dashboard mockup with glow
+### Principles
+1. **WHO CARES?** - Tap into customer pain first
+2. **Problem → Solution** - Not the other way around
+3. **Verbs, not adjectives** - Actions, not descriptions
+4. **Show proof** - Violations detected, approvals logged, controls enforced
+5. **Kill absolute language** - No "automatic compliance"
 
 ---
 
-## Previous Copy Iterations
+## Previous Copy (for reference)
 
-### Original
 ```
-Trusted AI.
-Verifiable Compliance.
+Badge: AI Governance Platform
 
-Auditable governance. Automatic compliance.
+Headline: Trusted AI with Verifiable Compliance.
 
-- One line of code
-- Human-in-the-loop built-in
-- EU AI Act ready
-```
+Subhead: Automatic governance. Automatic compliance.
 
-### Updated (Current)
-```
-Trusted AI with
-Verifiable Compliance.
-
-Automatic governance. Automatic compliance.
-
+Bullets:
 - Three lines of code integration
 - Human-in-the-loop built-in
 - EU AI Act ready

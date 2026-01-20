@@ -13,13 +13,14 @@ const GetStartedCTA = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Header */}
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">Escape the Purgatory.</span>
+            <span className="text-slate-900 dark:text-white">Your AI Is Either an</span>
             <br />
-            <span className="text-slate-900 dark:text-white">Build AI That Earns Trust.</span>
+            <span className="bg-gradient-to-r from-primary-400 to-accent bg-clip-text text-transparent">Asset</span>
+            <span className="text-slate-900 dark:text-white"> or a </span>
+            <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">Liability.</span>
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto">
-            Join the companies moving from pilot to production with Coalex.
-            Free tier for developers, enterprise solutions for teams ready to scale.
+            Companies that prove AI trust close deals faster. Companies that can't, lose to competitors who do.
           </p>
 
           {/* CTA Buttons */}

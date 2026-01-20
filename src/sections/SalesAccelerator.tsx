@@ -6,23 +6,23 @@ const SalesAccelerator = () => {
   const benefits = [
     {
       icon: Clock,
-      title: 'Reduce Deal Drag',
-      description: 'Customers can verify AI reliability themselves, skipping lengthy trust-building cycles',
+      title: 'Close deals 38% faster',
+      description: 'Customers verify AI reliability themselves — no more trust-building delays',
     },
     {
       icon: Shield,
-      title: 'Answer Security Questionnaires',
-      description: 'Share compliance evidence instantly with Magic Links — no more back-and-forth emails',
+      title: 'Kill security questionnaires',
+      description: 'Share compliance evidence instantly with Magic Links — no back-and-forth',
     },
     {
       icon: TrendingUp,
-      title: 'Competitive Advantage',
-      description: 'Stand out from competitors who can\'t prove their AI is trustworthy',
+      title: 'Win deals competitors can\'t',
+      description: 'Stand out when rivals can\'t prove their AI is safe',
     },
     {
       icon: CheckCircle,
-      title: 'Self-Serve Trust',
-      description: 'Prospects verify compliance and reliability on their own time, 24/7',
+      title: 'Let prospects verify trust themselves',
+      description: 'Self-serve compliance and reliability checks, 24/7',
     },
   ];
 
@@ -38,18 +38,17 @@ const SalesAccelerator = () => {
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-                Turn Trust Into{' '}
-                <span className="gradient-text-accent">Revenue</span>
+                Your AI Is{' '}
+                <span className="gradient-text-accent">Killing Deals</span>
               </h2>
 
               <p className="text-xl text-slate-600 dark:text-slate-300 mb-4">
-                Vanta proves your servers are safe.{' '}
-                <span className="text-primary-500 dark:text-primary-400 font-semibold">Coalex proves your AI is sane.</span>
+                Every enterprise deal stalls at "how do we know your AI is safe?"{' '}
+                <span className="text-primary-500 dark:text-primary-400 font-semibold">You don't have an answer. We do.</span>
               </p>
 
               <p className="text-lg text-slate-500 dark:text-slate-400 mb-8">
-                Your prospects need to trust your AI before they'll buy. Give them a public page
-                that shows your AI's health, compliance status, and human oversight — no meetings required.
+                Vanta proves your servers are safe. <span className="font-semibold">Coalex proves your AI is sane.</span>
               </p>
 
               <div className="space-y-4 mb-8">

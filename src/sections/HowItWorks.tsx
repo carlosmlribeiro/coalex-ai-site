@@ -6,25 +6,25 @@ const HowItWorks = () => {
     {
       icon: Plug,
       title: 'Connect',
-      desc: 'Integrate with your AI agents in minutes. Works with any framework — OpenAI, LangChain, custom models, and more.',
+      desc: 'Connect your AI agents. Any framework, any model. 10 minutes.',
       highlight: 'Any AI framework',
     },
     {
       icon: Activity,
       title: 'Monitor',
-      desc: 'Real-time health scores and alerts. Track safety, consistency, oversight, and stability across all your agents.',
+      desc: 'See every decision your AI makes. Get alerted when something\'s off.',
       highlight: 'Real-time insights',
     },
     {
       icon: Users,
       title: 'Intervene',
-      desc: 'Human-in-the-loop workflows for low-confidence decisions. Route critical outputs to the right reviewers.',
+      desc: 'Route risky outputs to humans before they reach customers.',
       highlight: 'Smart routing',
     },
     {
       icon: Share2,
       title: 'Prove',
-      desc: 'Share trust metrics with stakeholders. Public Trust Center, compliance reports, and audit-ready logs.',
+      desc: 'Export evidence. Share trust scores. Close deals faster.',
       highlight: 'Build trust',
     },
   ];
@@ -42,7 +42,7 @@ const HowItWorks = () => {
               How It <span className="gradient-text">Works</span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              From integration to production in four simple steps
+              From "we have an AI" to "we can prove our AI works" in four steps
             </p>
           </div>
 
@@ -84,7 +84,7 @@ const HowItWorks = () => {
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
               <span className="w-3 h-3 rounded-full bg-primary-400 animate-pulse" />
               <span className="text-slate-600 dark:text-slate-300">
-                <span className="text-primary-500 dark:text-primary-400 font-semibold">Result:</span> AI in production with built-in governance and continuous improvement
+                <span className="text-primary-500 dark:text-primary-400 font-semibold">Result:</span> AI you can trust. AI you can prove. AI that closes deals.
               </span>
             </div>
           </div>

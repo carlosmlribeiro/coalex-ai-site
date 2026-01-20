@@ -44,13 +44,12 @@ const FreeForDevs = () => {
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-                  Start Supervising{' '}
-                  <span className="gradient-text">for Free</span>
+                  Ship Your First Governed AI.{' '}
+                  <span className="gradient-text">Free.</span>
                 </h2>
 
                 <p className="text-xl text-slate-600 dark:text-slate-300 mb-8">
-                  Build trust from day one. Get full supervision capabilities for your first AI agent,
-                  completely free — forever.
+                  You built an AI agent. Now prove it works. Full governance for your first agent — no credit card, no catch.
                 </p>
 
                 <Button href="#pricing" size="lg" className="glow-primary">

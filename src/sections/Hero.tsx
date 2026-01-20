@@ -30,36 +30,38 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-5xl relative z-10">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-8">
-          <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
-          <span className="text-sm text-primary-400 font-medium">AI Governance Platform</span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-8">
+          <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+          <span className="text-sm text-red-400 font-medium">Your AI is in production. Is it under control?</span>
         </div>
 
-        {/* Main Headline */}
+        {/* Main Headline - Problem first */}
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-          <span className="gradient-text">Trusted AI with</span>
+          <span className="text-slate-900 dark:text-white">AI is live.</span>
           <br />
-          <span className="gradient-text">Verifiable Compliance.</span>
+          <span className="text-red-500 dark:text-red-400">Risk is invisible.</span>
         </h1>
 
-        {/* Subheadline */}
+        {/* Subheadline - What the product does */}
         <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto">
-          Automatic governance. Automatic compliance.
+          Make AI behavior visible, controlled, and audit-ready.
+          <br />
+          <span className="text-slate-500 dark:text-slate-400">Policy enforcement and audit trails for LLM apps.</span>
         </p>
 
-        {/* Value props */}
+        {/* Value props - Outcomes with verbs */}
         <div className="flex flex-wrap justify-center gap-6 mb-10 text-slate-500 dark:text-slate-400">
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-primary-400" />
-            Three lines of code integration
+            Detect policy violations in real time
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-primary-400" />
-            Human-in-the-loop built-in
+            Route risky outputs for human approval
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-primary-400" />
-            EU AI Act ready
+            Export audit-ready evidence on demand
           </span>
         </div>
 
@@ -89,60 +91,69 @@ const Hero = () => {
                 <div className="text-sm text-slate-400 dark:text-slate-500">coalex.ai/dashboard</div>
               </div>
 
-              {/* Mock Dashboard Content */}
-              <div className="grid md:grid-cols-3 gap-4 mb-6">
-                {/* Health Score Card */}
+              {/* Mock Dashboard Content - Show proof */}
+              <div className="grid md:grid-cols-4 gap-4 mb-6">
+                {/* Violations Detected */}
                 <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
-                  <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">AI Health Score</div>
-                  <div className="flex items-end gap-2">
-                    <span className="text-4xl font-bold text-primary-500 dark:text-primary-400">94</span>
-                    <span className="text-sm text-primary-500 dark:text-primary-400 mb-1">/ 100</span>
-                  </div>
-                  <div className="mt-2 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                    <div className="h-full w-[94%] bg-gradient-to-r from-primary-500 to-primary-400 rounded-full" />
+                  <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">Violations Detected</div>
+                  <div className="text-3xl font-bold text-red-500 dark:text-red-400">23</div>
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-red-500" />
+                    <span className="text-xs text-red-600 dark:text-red-400">This week</span>
                   </div>
                 </div>
 
-                {/* Active Agents Card */}
+                {/* Approvals Logged */}
                 <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
-                  <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">Active Agents</div>
-                  <div className="text-4xl font-bold text-slate-900 dark:text-white">12</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">Approvals Logged</div>
+                  <div className="text-3xl font-bold text-primary-500 dark:text-primary-400">847</div>
                   <div className="mt-2 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-green-500" />
-                    <span className="text-sm text-green-600 dark:text-green-400">All in production</span>
+                    <span className="text-xs text-green-600 dark:text-green-400">100% tracked</span>
                   </div>
                 </div>
 
-                {/* HITL Tasks Card */}
+                {/* Controls Enforced */}
                 <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
-                  <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">Pending Reviews</div>
-                  <div className="text-4xl font-bold text-slate-900 dark:text-white">3</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">Controls Enforced</div>
+                  <div className="text-3xl font-bold text-slate-900 dark:text-white">12</div>
                   <div className="mt-2 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
-                    <span className="text-sm text-yellow-600 dark:text-yellow-400">Awaiting approval</span>
+                    <span className="w-2 h-2 rounded-full bg-primary-400" />
+                    <span className="text-xs text-slate-500 dark:text-slate-400">Active policies</span>
+                  </div>
+                </div>
+
+                {/* Evidence Exported */}
+                <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                  <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">Evidence Exported</div>
+                  <div className="text-3xl font-bold text-slate-900 dark:text-white">3</div>
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-blue-500" />
+                    <span className="text-xs text-blue-600 dark:text-blue-400">Audit reports</span>
                   </div>
                 </div>
               </div>
 
-              {/* Agent List */}
+              {/* Recent Activity - Show real proof */}
               <div className="bg-slate-50/50 dark:bg-slate-800/30 rounded-lg p-4 border border-slate-200/50 dark:border-slate-700/50">
-                <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400 mb-3">
-                  <span>Agent</span>
-                  <span>Status</span>
-                </div>
+                <div className="text-sm text-slate-500 dark:text-slate-400 mb-3 font-medium">Recent Activity</div>
                 {[
-                  { name: 'Customer Support Bot', health: 98, status: 'healthy' },
-                  { name: 'Sales Assistant', health: 92, status: 'healthy' },
-                  { name: 'Document Processor', health: 87, status: 'warning' },
-                ].map((agent) => (
-                  <div key={agent.name} className="flex items-center justify-between py-2 border-b border-slate-200/50 dark:border-slate-700/50 last:border-0">
+                  { action: 'Policy violation blocked', agent: 'Customer Support Bot', time: '2m ago', type: 'violation' },
+                  { action: 'Human approval completed', agent: 'Sales Assistant', time: '5m ago', type: 'approval' },
+                  { action: 'Audit evidence exported', agent: 'All agents', time: '1h ago', type: 'evidence' },
+                ].map((activity, index) => (
+                  <div key={index} className="flex items-center justify-between py-2 border-b border-slate-200/50 dark:border-slate-700/50 last:border-0">
                     <div className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full ${agent.status === 'healthy' ? 'bg-green-500' : 'bg-yellow-500'}`} />
-                      <span className="text-slate-900 dark:text-white text-sm">{agent.name}</span>
+                      <span className={`w-2 h-2 rounded-full ${
+                        activity.type === 'violation' ? 'bg-red-500' :
+                        activity.type === 'approval' ? 'bg-green-500' : 'bg-blue-500'
+                      }`} />
+                      <div>
+                        <span className="text-slate-900 dark:text-white text-sm">{activity.action}</span>
+                        <span className="text-slate-400 dark:text-slate-500 text-xs ml-2">· {activity.agent}</span>
+                      </div>
                     </div>
-                    <span className={`text-sm font-medium ${agent.health >= 90 ? 'text-primary-500 dark:text-primary-400' : 'text-yellow-600 dark:text-yellow-400'}`}>
-                      {agent.health}%
-                    </span>
+                    <span className="text-xs text-slate-400 dark:text-slate-500">{activity.time}</span>
                   </div>
                 ))}
               </div>

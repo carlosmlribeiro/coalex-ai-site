@@ -6,8 +6,8 @@ const Problem = () => {
     {
       icon: XCircle,
       stat: '95%',
-      label: 'of AI pilots',
-      description: 'fail to deliver measurable business impact',
+      label: 'of AI pilots fail to deliver ROI',
+      description: 'Is yours next?',
       source: 'MIT NANDA Report',
       color: 'text-red-400',
       borderColor: 'border-red-500/30',
@@ -27,7 +27,7 @@ const Problem = () => {
       icon: Clock,
       stat: '43% → 27%',
       label: 'Executive trust in AI',
-      description: 'crashed in just one year',
+      description: 'crashed 37% in one year. Your board is watching.',
       source: 'Capgemini Research',
       color: 'text-yellow-400',
       borderColor: 'border-yellow-500/30',
@@ -45,12 +45,11 @@ const Problem = () => {
               <AlertTriangle className="h-8 w-8 text-red-400" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-              AI Pilots Are Stuck in{' '}
-              <span className="text-red-500 dark:text-red-400">Purgatory</span>
+              Your AI Project Is{' '}
+              <span className="text-red-500 dark:text-red-400">Burning Money</span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Enterprises have AI projects that never reach production. Fear of hallucinations,
-              compliance issues, and lack of oversight keep promising pilots from scaling.
+              Every week your AI stays in pilot mode, you're losing revenue to competitors who shipped.
             </p>
           </div>
 
@@ -76,11 +75,11 @@ const Problem = () => {
 
           {/* Deal Drag Callout */}
           <div className="glass-card p-8 border border-slate-200 dark:border-slate-700">
-            <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">The "Deal Drag" Problem</h3>
+            <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Your Prospects Don't Trust Your AI</h3>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
-              Even when AI works internally, your prospects don't trust it.
-              <span className="text-red-500 dark:text-red-400 font-semibold"> Sales cycles slow down</span> as customers
-              demand proof that your AI is safe, reliable, and compliant.
+              You built it. You tested it. You trust it.{' '}
+              <span className="text-red-500 dark:text-red-400 font-semibold">But your prospects don't</span> — and they're
+              stalling deals until you prove it's safe.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300">
               What's missing:{' '}

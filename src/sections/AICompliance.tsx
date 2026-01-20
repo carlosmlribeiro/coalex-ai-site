@@ -7,7 +7,7 @@ const AICompliance = () => {
     {
       name: 'ISO 42001',
       subtitle: 'The Global AI Standard',
-      description: 'First certifiable framework for responsible AI governance',
+      description: 'Enterprise buyers are asking "Are you ISO 42001 certified?" What\'s your answer?',
       icon: Globe2,
       color: 'primary',
       benefits: [
@@ -19,11 +19,11 @@ const AICompliance = () => {
     {
       name: 'EU AI Act',
       subtitle: "Europe's AI Regulation",
-      description: 'Phasing in 2025-2027 — be ready now',
+      description: 'Using AI APIs makes you a "deployer" with legal obligations. Fines start at €7.5M.',
       icon: Scale,
       color: 'accent',
       benefits: [
-        'Using AI APIs makes you a "deployer" with obligations',
+        'Phasing in 2025-2027 — compliance required now',
         '150+ controls, 16 policies mapped and monitored',
         'Transparency records and incident monitoring',
       ],
@@ -50,14 +50,13 @@ const AICompliance = () => {
               <span className="text-xs text-secondary-400 font-medium uppercase tracking-wider">AI Governance</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-              Ready for the New Era of{' '}
+              AI Regulation Is Here.{' '}
               <span className="bg-gradient-to-r from-secondary-400 to-accent bg-clip-text text-transparent">
-                AI Regulation
+                Are You Ready?
               </span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              AI regulation is here. Coalex helps you meet ISO 42001, EU AI Act, and other frameworks
-              without slowing down innovation.
+              EU AI Act hits in 2025. ISO 42001 auditors are asking questions. Your competitors are already preparing.
             </p>
           </div>
 
