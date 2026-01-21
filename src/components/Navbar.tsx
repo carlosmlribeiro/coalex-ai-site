@@ -1,10 +1,19 @@
-
 import React, { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import Button from './Button';
+import ThemeToggle from './ThemeToggle';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 20;
@@ -19,29 +28,100 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  const navLinks = [
+    { href: '#problem', label: 'The Problem' },
+    { href: '#three-layers', label: 'Solution' },
+    { href: '#how', label: 'How It Works' },
+    { href: '#pricing', label: 'Pricing' },
+    { href: '#compliance', label: 'Compliance' },
+  ];
+
   return (
-    <header 
+    <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'py-4 glass shadow-md' 
-          : 'py-6 bg-transparent'
+        scrolled
+          ? 'py-3 glass'
+          : 'py-5 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <a href="#" className="flex items-center space-x-2">
-            <img src="/lovable-uploads/bf579de7-1547-4385-ab45-457cb415c237.png" alt="Coalex.ai" className="h-9" />
+            <img
+              src={mounted && resolvedTheme === 'light'
+                ? '/coalex/logo-white.png'
+                : '/coalex/logo-black.png'}
+              alt="Coalex.ai"
+              className="h-8"
+            />
           </a>
-          
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#why-coalex" className="text-gray-700 hover:text-primary transition-colors">Why Coalex</a>
-            <a href="#how-it-works" className="text-gray-700 hover:text-primary transition-colors">How it Works</a>
-            <a href="#core-features" className="text-gray-700 hover:text-primary transition-colors">Features</a>
-            <a href="#customers-traction" className="text-gray-700 hover:text-primary transition-colors">Customers</a>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-slate-600 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium text-sm"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
-          
-          <Button href="#get-started" variant="primary">Get a Demo</Button>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
+            <a
+              href="#pricing"
+              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-sm"
+            >
+              Start Free
+            </a>
+            <Button href="#contact" size="sm">
+              Book Demo
+            </Button>
+          </div>
+
+          {/* Mobile Controls */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 border-t border-slate-200 dark:border-slate-700 pt-4">
+            <nav className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-slate-600 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="pt-4 flex flex-col gap-3">
+                <Button href="#pricing" variant="outline" className="w-full border-slate-300 dark:border-slate-600 text-slate-700 dark:text-white">
+                  Start Free
+                </Button>
+                <Button href="#contact" className="w-full">
+                  Book Demo
+                </Button>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

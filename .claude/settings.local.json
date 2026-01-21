@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:gotohuman.com)",
+      "WebFetch(domain:vanta.com)",
+      "WebFetch(domain:www.vanta.com)",
+      "Bash(ls:*)",
+      "WebFetch(domain:dify.ai)"
+    ]
+  }
+}

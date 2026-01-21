@@ -1,31 +1,57 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ProductShowcase from '@/components/ProductShowcase';
-import FeatureScreenshot from '@/components/FeatureScreenshot';
 
-
+// New redesigned sections
 import Hero from '@/sections/Hero';
-import WhyCoalex from '@/sections/WhyCoalex';
-import HowItWorks from '@/sections/HowItWorks';
-import CoreFeatures from '@/sections/CoreFeatures';
-import Integrations from '@/sections/Integrations';
-import UseCases from '@/sections/UseCases';
-import WhyChoose from '@/sections/WhyChoose';
-import CustomersTraction from '@/sections/CustomersTraction';
-import SecurityCompliance from '@/sections/SecurityCompliance';
-import GetStarted from '@/sections/GetStarted';
+import TrustBar from '@/sections/TrustBar';
+import Problem from '@/sections/Problem';
+import ThreeLayers from '@/sections/ThreeLayers';
+// import SalesAccelerator from '@/sections/SalesAccelerator';
+import TrustCenter from '@/sections/TrustCenter';
+import AICompliance from '@/sections/AICompliance';
+import AudienceTabs from '@/sections/AudienceTabs';
+// import FreeForDevs from '@/sections/FreeForDevs';
+// import ForAINative from '@/sections/ForAINative';
+// import DifyPartnership from '@/sections/DifyPartnership';
+// import HowItWorks from '@/sections/HowItWorks';
+import TrustedCustomers from '@/sections/TrustedCustomers';
+import Pricing from '@/sections/Pricing';
+// import SecurityCompliance from '@/sections/SecurityCompliance';
+import FAQ from '@/sections/FAQ';
+import GetStartedCTA from '@/sections/GetStartedCTA';
 
 const Index = () => {
   useEffect(() => {
-    // Initialize Microsoft Clarity (browser-only, safe)
-    const projectId = "qt81y8a6u9";
-    import('@microsoft/clarity')
-      .then((m) => {
-        const clarity = (m as any).default ?? (m as any);
-        clarity?.init?.(projectId);
-      })
-      .catch(() => { /* noop */ });
+    // Initialize Microsoft Clarity
+    const clarityId = import.meta.env.VITE_CLARITY_PROJECT_ID;
+    if (clarityId) {
+      import('@microsoft/clarity')
+        .then((m) => {
+          const clarity = (m as any).default ?? (m as any);
+          clarity?.init?.(clarityId);
+        })
+        .catch(() => { /* noop */ });
+    }
+
+    // Initialize Google Analytics 4
+    const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+    if (gaId) {
+      // Load gtag.js script
+      const gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+      document.head.appendChild(gtagScript);
+
+      // Initialize gtag
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+      }
+      gtag('js', new Date());
+      gtag('config', gaId);
+    }
+
     // Load HubSpot form
     const script = document.createElement('script');
     script.src = '//js.hsforms.net/forms/embed/v2.js';
@@ -48,56 +74,35 @@ const Index = () => {
       <Navbar />
 
       <main>
+        {/* 1. Hero Section - Main headline and CTAs */}
         <Hero />
-        <WhyCoalex />
-        <HowItWorks />
 
-        {/* Screenshot sections to showcase capabilities with partial reveal */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <FeatureScreenshot
-              imageSrc="/lovable-uploads/07a83a36-31dc-4c32-99ac-c9be36722469.png"
-              title="Human-in-the-Loop Task Engine"
-              description="Lightweight task UI that surfaces just the right context to reviewers. Route critical outputs for approval and capture structured feedback."
-              highlightMetric={{ value: '100%', label: 'traceability on reviewed actions' }}
-              ctaText="See the task flow"
-            />
-          </div>
-        </section>
+        {/* 2. Trust Bar - Customer logos and social proof */}
+        {/* <TrustBar /> */}
 
-        <ProductShowcase />
+        {/* 3. Problem Section - AI Purgatory */}
+        <Problem />
 
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <FeatureScreenshot
-              imageSrc="/lovable-uploads/85ac0ea7-62be-4f01-a21d-c57fa4c1e1ae.png"
-              title="Real-time Insights"
-              description="Correlate human actions with model accuracy and business KPIs. Track clicks, conversions and revenue impact as models improve."
-              alignment="right"
-              ctaText="Explore insights"
-            />
-          </div>
-        </section>
+        {/* 4. Three Layers Solution - Supervise/Trust/Comply */}
+        <ThreeLayers />
 
-        <CoreFeatures />
-        <Integrations />
-        <UseCases />
-        <WhyChoose />
-        <CustomersTraction />
+        {/* 5. Trust Center Feature - Public Trust Page */}
+        <TrustCenter />
 
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <FeatureScreenshot
-              imageSrc="/lovable-uploads/470a2477-3386-456e-8286-4db1b6e5cbd2.png"
-              title="Compliance & Audit Trails"
-              description="Immutable approval records, versioned decisions and exportable evidence for audits."
-              ctaText="Review compliance view"
-            />
-          </div>
-        </section>
+        {/* 6b. AI Compliance Frameworks - ISO 42001 & EU AI Act */}
+        <AICompliance />
 
-        <SecurityCompliance />
-        <GetStarted />
+        {/* 7. Audience Tabs - Developers, AI-Native, Enterprises */}
+        <AudienceTabs />
+
+        {/* 10. Pricing Section - 3-tier pricing */}
+        <Pricing />
+
+        {/* 11. FAQ Section */}
+        <FAQ />
+
+        {/* 12. Final CTA Section */}
+        <GetStartedCTA />
       </main>
 
       <Footer />
