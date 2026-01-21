@@ -1,28 +1,33 @@
 import React from 'react';
 import Button from '@/components/Button';
-import { ArrowRight, Rocket, Code, Shield, Zap, CreditCard } from 'lucide-react';
+import { ArrowRight, Code, Shield, FileText, Zap, CreditCard } from 'lucide-react';
 
 const FreeForDevs = () => {
   const features = [
     {
       icon: Code,
-      title: '1 Agent, Forever Free',
-      description: 'Full supervision capabilities for your first AI agent',
+      title: '1 Agent Free Forever',
+      description: 'Get started with one fully governed AI agent at no cost',
     },
     {
       icon: Shield,
-      title: 'Full Governance',
-      description: 'Human-in-the-loop, monitoring, and audit logs included',
+      title: 'Full Supervision',
+      description: 'Complete visibility into your AI behavior and decisions',
+    },
+    {
+      icon: FileText,
+      title: 'Audit Logs Included',
+      description: 'Every decision tracked and ready for review',
     },
     {
       icon: Zap,
-      title: 'Easy Integration',
-      description: 'SDK integration in minutes, not days',
+      title: 'SDK in Minutes',
+      description: 'Integrate with just a few lines of code',
     },
     {
       icon: CreditCard,
       title: 'No Credit Card',
-      description: 'Start building trust from day one, no strings attached',
+      description: 'Start building trust today, no strings attached',
     },
   ];
 
@@ -39,7 +44,7 @@ const FreeForDevs = () => {
               {/* Left: Content */}
               <div className="md:w-1/2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6">
-                  <Rocket className="h-4 w-4 text-primary-400" />
+                  <Code className="h-4 w-4 text-primary-400" />
                   <span className="text-xs text-primary-400 font-medium uppercase tracking-wider">For Developers</span>
                 </div>
 
@@ -58,19 +63,21 @@ const FreeForDevs = () => {
                 </Button>
               </div>
 
-              {/* Right: Features Grid */}
+              {/* Right: Features List */}
               <div className="md:w-1/2">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4">
                   {features.map((feature, index) => (
                     <div
                       key={index}
-                      className="p-4 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-500/30 transition-colors"
+                      className="flex items-start gap-4 p-4 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-500/30 transition-colors"
                     >
-                      <div className="p-2 rounded-lg bg-primary-500/10 inline-flex mb-3">
+                      <div className="p-2 rounded-lg bg-primary-500/10 shrink-0">
                         <feature.icon className="h-5 w-5 text-primary-400" />
                       </div>
-                      <h4 className="text-slate-900 dark:text-white font-semibold mb-1 text-sm">{feature.title}</h4>
-                      <p className="text-slate-500 dark:text-slate-400 text-xs">{feature.description}</p>
+                      <div>
+                        <h4 className="text-slate-900 dark:text-white font-semibold text-sm">{feature.title}</h4>
+                        <p className="text-slate-500 dark:text-slate-400 text-xs">{feature.description}</p>
+                      </div>
                     </div>
                   ))}
                 </div>

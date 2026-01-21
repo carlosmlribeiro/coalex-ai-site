@@ -6,15 +6,17 @@ const Pricing = () => {
   const plans = [
     {
       name: 'PRO',
-      badge: 'FREE FOREVER',
-      description: 'Perfect for developers starting their AI journey',
+      badge: null,
+      description: 'Start free, scale as you grow',
+      freeTier: {
+        title: '1 Agent Free Forever',
+        features: ['Full supervision', 'Audit logs', 'Community support'],
+      },
       features: [
         'Up to 3 Agents',
         'One User',
         '10K Interactions/Month',
-        'Full supervision capabilities',
-        'Audit logs',
-        'Community support',
+        'Priority support',
       ],
       cta: 'Get Started Free',
       ctaHref: '#contact',
@@ -25,6 +27,7 @@ const Pricing = () => {
       name: 'TEAM',
       badge: null,
       description: 'For growing teams scaling AI operations',
+      freeTier: null,
       features: [
         'Up to 5 Agents',
         'Up to 5 Workspaces',
@@ -42,6 +45,7 @@ const Pricing = () => {
       name: 'ENTERPRISE',
       badge: null,
       description: 'For organizations with advanced needs',
+      freeTier: null,
       features: [
         'Up to 25 Agents',
         'Up to 10 Workspaces',
@@ -110,6 +114,24 @@ const Pricing = () => {
                   {plan.name}
                 </h3>
                 <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">{plan.description}</p>
+
+                {/* Free Tier callout for PRO plan */}
+                {plan.freeTier && (
+                  <div className="mb-6 p-4 rounded-lg bg-primary-500/10 border border-primary-500/20">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Sparkles className="h-4 w-4 text-primary-400" />
+                      <span className="text-sm font-semibold text-primary-400">{plan.freeTier.title}</span>
+                    </div>
+                    <ul className="space-y-1">
+                      {plan.freeTier.features.map((feature, index) => (
+                        <li key={index} className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                          <Check className="h-3 w-3 text-primary-400" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* Features */}
                 <ul className="space-y-3 mb-8 flex-grow">

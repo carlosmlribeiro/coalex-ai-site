@@ -35,11 +35,11 @@ const Hero = () => {
           <span className="text-sm text-red-400 font-medium">Your AI is in production. Is it under control?</span>
         </div>
 
-        {/* Main Headline - Problem first */}
+        {/* Main Headline */}
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-          <span className="text-slate-900 dark:text-white">AI is live.</span>
+          <span className="text-slate-900 dark:text-white">AI Is Already Here.</span>
           <br />
-          <span className="text-red-500 dark:text-red-400">Risk is invisible.</span>
+          <span className="text-red-500 dark:text-red-400">Do You Trust It With Your Business?</span>
         </h1>
 
         {/* Subheadline - What the product does */}
@@ -77,7 +77,17 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Dashboard Mockup */}
+        {/* Dashboard Screenshot Placeholder */}
+        {/*
+          FE TEAM TODO: Replace this placeholder with real Coalex dashboard screenshot
+          Screenshot should show:
+          - Agent health scores
+          - Policy violations detected
+          - Human approvals logged
+          - Evidence exported metrics
+          Emphasis on "proof" metrics: violations caught, decisions reviewed, evidence exported
+          Include recognizable Coalex branding
+        */}
         <div className="relative mt-16 mx-auto max-w-4xl">
           <div className="glass-card p-4 glow-primary">
             <div className="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-700">

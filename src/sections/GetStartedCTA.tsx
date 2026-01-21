@@ -11,17 +11,14 @@ const GetStartedCTA = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Header */}
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-slate-900 dark:text-white">Your AI Is Either an</span>
-            <br />
+          {/* Header - Single powerful line */}
+          <h2 className="text-4xl md:text-6xl font-bold mb-12">
+            <span className="text-slate-900 dark:text-white">Make Your AI an </span>
             <span className="bg-gradient-to-r from-primary-400 to-accent bg-clip-text text-transparent">Asset</span>
-            <span className="text-slate-900 dark:text-white"> or a </span>
-            <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">Liability.</span>
+            <span className="text-slate-900 dark:text-white">, </span>
+            <span className="text-red-500 dark:text-red-400">NOT</span>
+            <span className="text-slate-900 dark:text-white"> a Liability.</span>
           </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto">
-            Companies that prove AI trust close deals faster. Companies that can't, lose to competitors who do.
-          </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -46,29 +43,13 @@ const GetStartedCTA = () => {
             </div>
           </div>
 
-          {/* HubSpot Form Container - always dark themed */}
-          <div className="bg-slate-800/90 backdrop-blur-md border border-slate-700 rounded-2xl p-8 max-w-xl mx-auto">
-            <h3 className="text-xl font-bold text-white mb-4">Get in Touch</h3>
-            <p className="text-slate-400 mb-6">
+          {/* HubSpot Form Container - white background for readability */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-8 max-w-xl mx-auto shadow-lg">
+            <h3 className="text-xl font-bold text-slate-900 mb-4">Get in Touch</h3>
+            <p className="text-slate-600 mb-6">
               Have questions? Fill out the form and we'll get back to you within 24 hours.
             </p>
             <div id="hubspot-form" className="min-h-[200px]" />
-          </div>
-
-          {/* Trust signals */}
-          <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500" />
-              Free tier available
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500" />
-              No credit card required
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500" />
-              Setup in minutes
-            </span>
           </div>
         </div>
       </div>

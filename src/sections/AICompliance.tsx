@@ -30,13 +30,6 @@ const AICompliance = () => {
     },
   ];
 
-  const additionalFrameworks = [
-    { name: 'NIST AI RMF', description: 'US AI risk framework' },
-    { name: 'SOC 2', description: 'Infrastructure security' },
-    { name: 'GDPR', description: 'Data privacy' },
-    { name: 'HIPAA', description: 'Healthcare compliance' },
-  ];
-
   return (
     <section id="compliance" className="py-20 relative">
       {/* Background */}
@@ -136,22 +129,6 @@ const AICompliance = () => {
                   <p className="text-sm text-slate-500 dark:text-slate-400">Less compliance burden</p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Additional Frameworks */}
-          <div className="text-center mb-8">
-            <p className="text-slate-500 dark:text-slate-400 mb-4">Also supporting</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {additionalFrameworks.map((fw) => (
-                <div
-                  key={fw.name}
-                  className="px-4 py-2 bg-slate-100 dark:bg-slate-800/50 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors"
-                >
-                  <span className="text-slate-900 dark:text-white font-medium">{fw.name}</span>
-                  <span className="text-slate-500 text-sm ml-2">· {fw.description}</span>
-                </div>
-              ))}
             </div>
           </div>
 

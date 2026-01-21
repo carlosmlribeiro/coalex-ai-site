@@ -12,6 +12,13 @@ const TrustCenter = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Visual - Trust Center Mock */}
+            {/*
+              FE TEAM TODO: Replace this mock with real Trust Center screenshot
+              Screenshot should show:
+              - The actual trust.yourcompany.com interface
+              - Visible elements: Health score, compliance badges (ISO 42001, EU AI Act, SOC 2), HITL metrics
+              - Should look like a real customer-facing page
+            */}
             <div className="order-2 lg:order-1">
               <div className="glass-card p-4 glow-primary">
                 <div className="bg-slate-900 rounded-xl overflow-hidden border border-slate-700">

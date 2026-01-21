@@ -5,8 +5,8 @@ const ThreeLayers = () => {
   const layers = [
     {
       title: 'Supervise',
-      subtitle: 'AI makes decisions you can\'t see',
-      description: 'See every decision. Intervene when it matters.',
+      subtitle: 'See every AI decision',
+      description: 'Full visibility and control over your AI behavior.',
       color: 'primary',
       gradient: 'from-primary-500 to-primary-400',
       bgGlow: 'bg-primary-500/20',
@@ -18,8 +18,8 @@ const ThreeLayers = () => {
     },
     {
       title: 'Trust',
-      subtitle: 'Prospects don\'t trust your AI',
-      description: 'Give them proof, not promises.',
+      subtitle: 'Prove AI reliability',
+      description: 'Give customers proof, not promises.',
       color: 'accent',
       gradient: 'from-accent to-purple-400',
       bgGlow: 'bg-accent/20',
@@ -31,7 +31,7 @@ const ThreeLayers = () => {
     },
     {
       title: 'Comply',
-      subtitle: 'Regulations are coming. You\'re not ready.',
+      subtitle: 'Meet AI regulations',
       description: 'Ship compliant. Stay compliant.',
       color: 'secondary',
       gradient: 'from-secondary-500 to-blue-400',
@@ -54,11 +54,11 @@ const ThreeLayers = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-              Three Problems.{' '}
-              <span className="gradient-text">One Platform.</span>
+              One Platform.{' '}
+              <span className="gradient-text">Three Solutions.</span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Your AI is live but uncontrolled, untrusted, and uncompliant. Fix all three.
+              Everything you need to reach trusted AI.
             </p>
           </div>
 

@@ -7,15 +7,17 @@ import Hero from '@/sections/Hero';
 import TrustBar from '@/sections/TrustBar';
 import Problem from '@/sections/Problem';
 import ThreeLayers from '@/sections/ThreeLayers';
-import SalesAccelerator from '@/sections/SalesAccelerator';
+// import SalesAccelerator from '@/sections/SalesAccelerator';
 import TrustCenter from '@/sections/TrustCenter';
 import AICompliance from '@/sections/AICompliance';
-import FreeForDevs from '@/sections/FreeForDevs';
-import DifyPartnership from '@/sections/DifyPartnership';
-import HowItWorks from '@/sections/HowItWorks';
+import AudienceTabs from '@/sections/AudienceTabs';
+// import FreeForDevs from '@/sections/FreeForDevs';
+// import ForAINative from '@/sections/ForAINative';
+// import DifyPartnership from '@/sections/DifyPartnership';
+// import HowItWorks from '@/sections/HowItWorks';
 import TrustedCustomers from '@/sections/TrustedCustomers';
 import Pricing from '@/sections/Pricing';
-import SecurityCompliance from '@/sections/SecurityCompliance';
+// import SecurityCompliance from '@/sections/SecurityCompliance';
 import GetStartedCTA from '@/sections/GetStartedCTA';
 
 const Index = () => {
@@ -83,34 +85,19 @@ const Index = () => {
         {/* 4. Three Layers Solution - Supervise/Trust/Comply */}
         <ThreeLayers />
 
-        {/* 5. Sales Accelerator - Deal drag pitch */}
-        <SalesAccelerator />
-
-        {/* 6. Trust Center Feature - Public Trust Page */}
+        {/* 5. Trust Center Feature - Public Trust Page */}
         <TrustCenter />
 
         {/* 6b. AI Compliance Frameworks - ISO 42001 & EU AI Act */}
         <AICompliance />
 
-        {/* 7. Free for Developers */}
-        <FreeForDevs />
+        {/* 7. Audience Tabs - Developers, AI-Native, Enterprises */}
+        <AudienceTabs />
 
-        {/* 8. Partnership Section */}
-        <DifyPartnership />
-
-        {/* 9. How It Works - 4-step flow */}
-        <HowItWorks />
-
-        {/* 10. Trusted Customers - Logos + testimonials */}
-        {/* <TrustedCustomers /> */}
-
-        {/* 11. Pricing Section - 3-tier pricing */}
+        {/* 10. Pricing Section - 3-tier pricing */}
         <Pricing />
 
-        {/* 12. Security & Compliance Badges */}
-        <SecurityCompliance />
-
-        {/* 13. Final CTA Section */}
+        {/* 11. Final CTA Section */}
         <GetStartedCTA />
       </main>
 
