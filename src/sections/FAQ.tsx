@@ -1,115 +1,105 @@
-import React from 'react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import React, { useState } from 'react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   const faqs = [
     {
-      question: "What makes Coalex different from other AI observability tools?",
-      answer: "While other tools focus on technical monitoring for developers, Coalex is built for business decision-makers. We provide governance workflows, executive dashboards with business metrics, and built-in compliance—not just technical debugging. Our human-in-the-loop approach bridges the gap between AI development and executive decision-making."
+      question: 'What is Coalex?',
+      answer: 'Coalex is an AI governance platform that helps you supervise, trust, and comply with AI regulations. We provide real-time monitoring, human-in-the-loop controls, audit trails, and compliance mapping for your AI agents and LLM applications.',
     },
     {
-      question: "How long does it take to integrate Coalex?",
-      answer: "Integration takes just one line of code. We listen to telemetry data from your existing AI systems and respond to agent escalations via our MCP server. No rearchitecting required, and you can be up and running in days, not weeks."
+      question: 'How does the free tier work?',
+      answer: 'You get 1 AI agent free forever with full supervision capabilities, audit logs, and community support. No credit card required. When you need more agents or advanced features, you can upgrade to a paid plan.',
     },
     {
-      question: "Is Coalex compliant with EU AI Act regulations?",
-      answer: "Yes. Coalex is built with EU AI Act compliance in mind, providing complete audit trails, immutable approval records, versioned decisions, and built-in fairness toolkits. We help you be ready for 2026 enforcement with compliance baked into every interaction."
+      question: 'What compliance frameworks do you support?',
+      answer: 'We support ISO 42001 (the global AI management standard), EU AI Act compliance, and map controls that also apply to SOC 2, GDPR, and other frameworks. Our cross-framework approach means you collect evidence once and apply it across multiple compliance requirements.',
     },
     {
-      question: "What does 'human-in-the-loop' mean?",
-      answer: "Human-in-the-loop means critical AI decisions are routed to the right human experts at the right time for approval. Our AI engine identifies uncertainty and asks simple validation questions to your domain experts and executives. Their responses create training data, improve your AI continuously, and maintain full governance."
+      question: 'What is a Trust Center?',
+      answer: "A Trust Center is a public-facing page (like trust.yourcompany.com) where your customers can verify your AI's health scores, compliance status, and human oversight metrics in real-time. It helps you close deals faster by providing proof instead of promises.",
     },
     {
-      question: "Who is Coalex for—developers or executives?",
-      answer: "Both. Developers integrate our SDK easily into their AI systems. Executives get actionable dashboards showing AI decision accuracy, human intervention rates, ROI metrics, and compliance status. Domain experts receive clear approval workflows with full context. Everyone works together through one platform."
+      question: 'How long does integration take?',
+      answer: 'Most developers integrate our SDK in minutes. We provide simple APIs and SDKs that wrap around your existing AI agents with minimal code changes. You can start monitoring your first agent the same day you sign up.',
     },
     {
-      question: "How does Coalex help my AI improve over time?",
-      answer: "Every human interaction in Coalex creates training data. We automatically generate evaluation test suites, capture structured feedback, and build proprietary fine-tuning datasets. Your AI doesn't just run—it learns continuously from expert corrections and approvals."
+      question: 'Do I need to change my AI infrastructure?',
+      answer: 'No. Coalex works as a governance layer on top of your existing AI infrastructure. We integrate with any LLM provider (OpenAI, Anthropic, etc.) and AI platforms like Dify.ai without requiring you to change how you build or deploy your AI.',
     },
     {
-      question: "Can Coalex integrate with my existing AI stack?",
-      answer: "Yes. Coalex is designed to work with any AI system. We integrate with popular frameworks and observability tools through our SDK and MCP server. Whether you're using LangChain, OpenAI, Anthropic, or custom solutions, Coalex fits into your existing workflow."
+      question: 'What is human-in-the-loop (HITL)?',
+      answer: "Human-in-the-loop means routing certain AI decisions to human reviewers before they're executed. Coalex lets you define policies for when human approval is required — like high-risk outputs, low-confidence responses, or sensitive topics — ensuring humans stay in control.",
     },
     {
-      question: "What happens to my employees when I deploy AI with Coalex?",
-      answer: "Your employees become AI supervisors, not replacements. Just like supermarket cashiers evolved to oversee self-checkout registers, your workforce shifts from repetitive tasks to training and supervising AI. This is workforce transformation through upskilling, not downsizing."
+      question: 'How do you help with EU AI Act compliance?',
+      answer: 'The EU AI Act requires AI deployers to maintain transparency records, monitor for incidents, and implement risk management. Coalex automatically maps your AI operations to the 150+ controls required, monitors for violations, and generates the documentation you need for audits.',
     },
-    {
-      question: "What kind of support do you provide?",
-      answer: "We offer hands-on implementation support, working directly with your team to integrate Coalex. Design partners get direct access to our founding team, influence our product roadmap, and receive preferred pricing. We're committed to your success from day one."
-    },
-    {
-      question: "How much does Coalex cost?",
-      answer: "Pricing depends on your scale and requirements. We offer special early-adopter rates for design partners who join us in 2025. Contact us for a personalized quote based on your specific use case and deployment size."
-    },
-    {
-      question: "What's the difference between the Enterprise and Developer offerings?",
-      answer: "Enterprise customers get full white-glove service including hands-on implementation, dedicated support, and design partnership opportunities. Developers joining our waiting list will get early access to our self-service platform when it launches. Both get the same powerful governance platform."
-    },
-    {
-      question: "Do you have real customers in production?",
-      answer: "Yes. We're live with our first customer, running 3 use cases over thousands of interactions in just 4 months. We're not just theory—we're proven in production and growing fast."
-    }
   ];
 
   return (
-    <section id="faq" className="py-20 bg-white">
+    <section id="faq" className="py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
+          {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Frequently Asked Questions
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6">
+              <HelpCircle className="h-8 w-8 text-primary-400" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
+              Frequently Asked <span className="gradient-text">Questions</span>
             </h2>
-            <p className="text-xl text-gray-600">
-              Everything you need to know about Coalex.ai
+            <p className="text-xl text-slate-600 dark:text-slate-300">
+              Everything you need to know about Coalex and AI governance.
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          {/* FAQ Items */}
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem
+              <div
                 key={index}
-                value={`item-${index}`}
-                className="bg-gray-50 rounded-lg px-6 border border-gray-200"
+                className="glass-card border border-slate-200 dark:border-slate-700 overflow-hidden"
               >
-                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-primary-600 py-4">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-700 pb-4">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left"
+                >
+                  <span className="text-lg font-semibold text-slate-900 dark:text-white pr-4">
+                    {faq.question}
+                  </span>
+                  <ChevronDown
+                    className={`h-5 w-5 text-slate-400 shrink-0 transition-transform duration-200 ${
+                      openIndex === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-200 ${
+                    openIndex === index ? 'max-h-96' : 'max-h-0'
+                  }`}
+                >
+                  <div className="px-6 pb-6 text-slate-600 dark:text-slate-300">
+                    {faq.answer}
+                  </div>
+                </div>
+              </div>
             ))}
-          </Accordion>
+          </div>
 
-          <div className="mt-12 text-center bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">Still have questions?</h3>
-            <p className="text-lg text-gray-700 mb-6">
-              We're here to help. Reach out to us directly.
+          {/* Contact CTA */}
+          <div className="mt-12 text-center">
+            <p className="text-slate-500 dark:text-slate-400 mb-4">
+              Still have questions?
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="mailto:founders@coalex.ai"
-                className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
-              >
-                Contact Us
-              </a>
-              <a
-                href="https://linkedin.com/company/coalex-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-              >
-                <img src="/InBug-White.png" alt="LinkedIn" className="h-5 w-5" />
-                Follow on LinkedIn
-              </a>
-            </div>
+            <a
+              href="#contact"
+              className="text-primary-500 dark:text-primary-400 font-semibold hover:underline"
+            >
+              Get in touch with our team →
+            </a>
           </div>
         </div>
       </div>

@@ -18,6 +18,7 @@ import AudienceTabs from '@/sections/AudienceTabs';
 import TrustedCustomers from '@/sections/TrustedCustomers';
 import Pricing from '@/sections/Pricing';
 // import SecurityCompliance from '@/sections/SecurityCompliance';
+import FAQ from '@/sections/FAQ';
 import GetStartedCTA from '@/sections/GetStartedCTA';
 
 const Index = () => {
@@ -97,7 +98,10 @@ const Index = () => {
         {/* 10. Pricing Section - 3-tier pricing */}
         <Pricing />
 
-        {/* 11. Final CTA Section */}
+        {/* 11. FAQ Section */}
+        <FAQ />
+
+        {/* 12. Final CTA Section */}
         <GetStartedCTA />
       </main>
 
