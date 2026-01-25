@@ -1,62 +1,45 @@
 import React, { useState } from 'react';
 import Button from '@/components/Button';
-import { ArrowRight, Code, Shield, FileText, Zap, CreditCard, Eye, Globe, CheckCircle, Workflow, Users, Building2, Rocket } from 'lucide-react';
+import { ArrowRight, Shield, Globe, CheckCircle, Workflow, Users, Building2, Rocket, Eye, Zap, FileCheck } from 'lucide-react';
 
-type AudienceType = 'developers' | 'ai-native' | 'enterprises';
+type AudienceType = 'ai-native' | 'enterprises';
 
 const AudienceTabs = () => {
-  const [activeTab, setActiveTab] = useState<AudienceType>('developers');
+  const [activeTab, setActiveTab] = useState<AudienceType>('ai-native');
 
   const tabs = [
-    { id: 'developers' as AudienceType, label: 'For Developers', icon: Code },
     { id: 'ai-native' as AudienceType, label: 'For AI-Native', icon: Rocket },
     { id: 'enterprises' as AudienceType, label: 'For Enterprises', icon: Building2 },
   ];
 
   const audiences = {
-    developers: {
-      badge: 'For Developers',
-      headline: 'Ship Your First Governed AI.',
-      headlineAccent: 'Free.',
-      description: 'You built an AI agent. Now prove it works. Full governance for your first agent — no credit card, no catch.',
-      features: [
-        { icon: Code, title: '1 Agent Free Forever', description: 'Get started with one fully governed AI agent at no cost' },
-        { icon: Shield, title: 'Full Supervision', description: 'Complete visibility into your AI behavior and decisions' },
-        { icon: FileText, title: 'Audit Logs Included', description: 'Every decision tracked and ready for review' },
-        { icon: Zap, title: 'SDK in Minutes', description: 'Integrate with just a few lines of code' },
-        { icon: CreditCard, title: 'No Credit Card', description: 'Start building trust today, no strings attached' },
-      ],
-      primaryCta: { text: 'Get Started Free', href: '#pricing' },
-      secondaryCta: null,
-      accentColor: 'primary',
-    },
     'ai-native': {
       badge: 'For AI-Native Companies',
       headline: 'You Build AI Products.',
-      headlineAccent: 'We Help You Prove They Work.',
-      description: 'Your AI is your product. Coalex gives you the observability, trust infrastructure, and compliance mapping to prove it\'s reliable — so you can close deals faster.',
+      headlineAccent: "Prove They're Safe.",
+      description: 'Your customers ask for SOC 2, ISO 42001, audit trails. You need proof, not promises. Coalex gives you the trust infrastructure to close deals faster.',
       features: [
-        { icon: Eye, title: 'Real-time Observability', description: 'Monitor your entire AI fleet with agent health scores' },
-        { icon: Globe, title: 'Public Trust Center', description: 'Give your customers a live dashboard proving your AI is trustworthy' },
-        { icon: Shield, title: 'Compliance Mapping', description: 'ISO 42001 & EU AI Act compliance mapped automatically' },
+        { icon: Eye, title: 'Real-time Health Scores', description: 'Monitor your entire AI fleet with live reliability metrics' },
+        { icon: Globe, title: 'Public Trust Center', description: 'Give customers a live dashboard proving your AI is trustworthy' },
+        { icon: FileCheck, title: 'Compliance Documentation', description: 'ISO 42001 & EU AI Act compliance evidence on demand' },
         { icon: Zap, title: 'Close Deals Faster', description: 'Turn trust into a sales asset with verifiable proof' },
       ],
       primaryCta: { text: 'See Plans', href: '#pricing' },
-      secondaryCta: { text: 'Book a Demo', href: '#contact' },
+      secondaryCta: { text: 'Talk to Us', href: '#contact' },
       accentColor: 'accent',
     },
     enterprises: {
       badge: 'For Enterprises',
-      headline: 'New to AI?',
-      headlineAccent: 'Start with Dify.ai + Coalex',
-      description: 'Build powerful AI workflows with Dify.ai\'s visual platform — already SOC 2 Type II and GDPR compliant. Coalex adds the governance, trust, and compliance layer you need.',
+      headline: 'Starting Your AI Journey?',
+      headlineAccent: 'Build It Right From Day One.',
+      description: "Don't spend 18 months on a pilot only to get blocked at production. Build with Dify.ai's visual platform — already SOC 2 Type II compliant — and add Coalex governance from the start.",
       features: [
-        { icon: Workflow, title: 'Visual AI Platform', description: 'Build AI workflows with Dify.ai\'s intuitive visual platform' },
+        { icon: Workflow, title: 'Visual AI Platform', description: "Build AI workflows with Dify.ai's intuitive visual platform" },
         { icon: CheckCircle, title: 'Already Compliant', description: 'Dify.ai is SOC 2 Type II and GDPR compliant out of the box' },
-        { icon: Shield, title: 'Governance Layer', description: 'Coalex adds trust, compliance mapping, and human oversight' },
-        { icon: Users, title: 'Enterprise Support', description: 'Dedicated support and SLA guarantees for your team' },
+        { icon: Shield, title: 'Governance Built-in', description: 'Coalex adds trust, compliance mapping, and human oversight' },
+        { icon: Users, title: 'Full Support', description: 'Dedicated support and SLA guarantees for your team' },
       ],
-      primaryCta: { text: 'Talk to Sales', href: '#contact' },
+      primaryCta: { text: 'Talk to Us', href: '#contact' },
       secondaryCta: { text: 'Learn About Dify.ai', href: 'https://dify.ai' },
       accentColor: 'secondary',
     },
@@ -65,20 +48,15 @@ const AudienceTabs = () => {
   const current = audiences[activeTab];
 
   const getAccentClasses = (color: string) => ({
-    badge: color === 'primary' ? 'bg-primary-500/10 border-primary-500/20 text-primary-400' :
-           color === 'accent' ? 'bg-accent/10 border-accent/20 text-accent' :
+    badge: color === 'accent' ? 'bg-accent/10 border-accent/20 text-accent' :
            'bg-secondary-500/10 border-secondary-500/20 text-secondary-400',
-    gradient: color === 'primary' ? 'gradient-text' :
-              color === 'accent' ? 'bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent' :
+    gradient: color === 'accent' ? 'bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent' :
               'bg-gradient-to-r from-secondary-400 to-blue-400 bg-clip-text text-transparent',
-    icon: color === 'primary' ? 'bg-primary-500/10 text-primary-400' :
-          color === 'accent' ? 'bg-accent/10 text-accent' :
+    icon: color === 'accent' ? 'bg-accent/10 text-accent' :
           'bg-secondary-500/10 text-secondary-400',
-    button: color === 'primary' ? 'glow-primary' :
-            color === 'accent' ? 'bg-accent hover:bg-accent/90 text-white' :
+    button: color === 'accent' ? 'bg-accent hover:bg-accent/90 text-white' :
             'glow-primary',
-    border: color === 'primary' ? 'border-primary-500/20' :
-            color === 'accent' ? 'border-accent/20' :
+    border: color === 'accent' ? 'border-accent/20' :
             'border-secondary-500/20',
   });
 
@@ -99,14 +77,14 @@ const AudienceTabs = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all ${
                     activeTab === tab.id
                       ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
                       : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
                   }`}
                 >
                   <tab.icon className="h-4 w-4" />
-                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span>{tab.label}</span>
                 </button>
               ))}
             </div>

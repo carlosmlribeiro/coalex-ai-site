@@ -31,9 +31,8 @@ const Navbar = () => {
   const navLinks = [
     { href: '#problem', label: 'The Problem' },
     { href: '#three-layers', label: 'Solution' },
-    { href: '#how', label: 'How It Works' },
     { href: '#pricing', label: 'Pricing' },
-    { href: '#compliance', label: 'Compliance' },
+    { href: '#faq', label: 'Resources' },
   ];
 
   return (
@@ -74,13 +73,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
             <a
-              href="#pricing"
+              href="#three-layers"
               className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-sm"
             >
-              Start Free
+              See It Work
             </a>
             <Button href="#contact" size="sm">
-              Book Demo
+              Talk to Us
             </Button>
           </div>
 
@@ -112,11 +111,11 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="pt-4 flex flex-col gap-3">
-                <Button href="#pricing" variant="outline" className="w-full border-slate-300 dark:border-slate-600 text-slate-700 dark:text-white">
-                  Start Free
+                <Button href="#three-layers" variant="outline" className="w-full border-slate-300 dark:border-slate-600 text-slate-700 dark:text-white">
+                  See It Work
                 </Button>
                 <Button href="#contact" className="w-full">
-                  Book Demo
+                  Talk to Us
                 </Button>
               </div>
             </nav>

@@ -1,45 +1,45 @@
 import React from 'react';
-import { Eye, Shield, FileCheck, Users, Activity, Bell, Award, Globe, ScrollText } from 'lucide-react';
+import { ShieldOff, Users, FileCheck, AlertOctagon, UserCheck, ClipboardCheck, Scale, ScrollText, Eye } from 'lucide-react';
 
 const ThreeLayers = () => {
   const layers = [
     {
-      title: 'Supervise',
-      subtitle: 'See every AI decision',
-      description: 'Full visibility and control over your AI behavior.',
+      title: 'Block',
+      subtitle: 'Stop risky decisions before they execute',
+      description: 'All AI decisions above X risk are reviewed before execution.',
       color: 'primary',
-      gradient: 'from-primary-500 to-primary-400',
-      bgGlow: 'bg-primary-500/20',
+      gradient: 'from-red-500 to-red-400',
+      bgGlow: 'bg-red-500/20',
       features: [
-        { icon: Users, text: 'Flag low-confidence outputs before they reach customers' },
-        { icon: Activity, text: 'Route risky decisions to the right reviewer' },
-        { icon: Bell, text: 'Get alerted when AI goes off-script' },
+        { icon: AlertOctagon, text: 'Set risk thresholds for automatic blocking' },
+        { icon: ShieldOff, text: 'Catch dangerous outputs before they reach customers' },
+        { icon: Scale, text: 'Define what "risky" means for your context' },
       ],
     },
     {
-      title: 'Trust',
-      subtitle: 'Prove AI reliability',
-      description: 'Give customers proof, not promises.',
+      title: 'Route',
+      subtitle: 'Get the right human to approve',
+      description: 'Clear accountability for every escalated decision.',
       color: 'accent',
       gradient: 'from-accent to-purple-400',
       bgGlow: 'bg-accent/20',
       features: [
-        { icon: Award, text: 'Publish live health scores your customers can verify' },
-        { icon: Globe, text: 'Share compliance status without meetings' },
-        { icon: Shield, text: 'Turn trust into a sales asset, not a blocker' },
+        { icon: UserCheck, text: 'Route to the right reviewer automatically' },
+        { icon: Users, text: 'Log who approved what and when' },
+        { icon: ClipboardCheck, text: 'Keep humans in control without slowing down' },
       ],
     },
     {
-      title: 'Comply',
-      subtitle: 'Meet AI regulations',
-      description: 'Ship compliant. Stay compliant.',
+      title: 'Prove',
+      subtitle: 'Create defensible, attributable audit trails',
+      description: 'Evidence you can present to regulators, customers, and the board.',
       color: 'secondary',
       gradient: 'from-secondary-500 to-blue-400',
       bgGlow: 'bg-secondary-500/20',
       features: [
-        { icon: ScrollText, text: 'Collect evidence automatically as you operate' },
-        { icon: FileCheck, text: 'Map controls to ISO 42001, EU AI Act, SOC 2' },
-        { icon: Eye, text: 'Export audit packages in one click' },
+        { icon: ScrollText, text: 'Every decision logged and attributable' },
+        { icon: FileCheck, text: 'Map to ISO 42001, EU AI Act, SOC 2' },
+        { icon: Eye, text: 'Export audit packages on demand' },
       ],
     },
   ];
@@ -55,10 +55,10 @@ const ThreeLayers = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
               One Platform.{' '}
-              <span className="gradient-text">Three Solutions.</span>
+              <span className="gradient-text">Three Guarantees.</span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Everything you need to reach trusted AI.
+              Not governance. Not observability. A firewall.
             </p>
           </div>
 

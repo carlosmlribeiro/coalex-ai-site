@@ -1,57 +1,55 @@
 import React from 'react';
 import Button from '@/components/Button';
-import { Check, ArrowRight, Sparkles } from 'lucide-react';
+import { Check, ArrowRight, Sparkles, Rocket, Building, Building2 } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
     {
-      name: 'PRO',
-      badge: null,
-      description: 'Start free, scale as you grow',
-      freeTier: {
-        title: '1 Agent Free Forever',
-        features: ['Full supervision', 'Audit logs', 'Community support'],
-      },
+      name: 'PILOT',
+      icon: Rocket,
+      tagline: 'Prove It Works',
+      description: 'Get your first AI workflow approved for production',
       features: [
-        'Up to 3 Agents',
-        'One User',
-        '10K Interactions/Month',
-        'Priority support',
+        '1 AI Workflow',
+        'Full Block/Route/Prove stack',
+        'Audit trail exports',
+        'Basic compliance mapping',
+        'Email support',
       ],
-      cta: 'Get Started Free',
+      cta: 'Start a Pilot',
       ctaHref: '#contact',
       highlight: true,
       popular: false,
     },
     {
-      name: 'TEAM',
-      badge: null,
-      description: 'For growing teams scaling AI operations',
-      freeTier: null,
+      name: 'PRODUCTION',
+      icon: Building,
+      tagline: 'Scale with Confidence',
+      description: 'Post-approval expansion across workflows',
       features: [
-        'Up to 5 Agents',
-        'Up to 5 Workspaces',
-        '100K Interactions/Month',
-        'One Compliance Report',
-        'Team collaboration',
+        'Up to 10 AI Workflows',
+        'Multi-team workspaces',
+        'Advanced risk thresholds',
+        'Full compliance reports',
+        'Public Trust Center',
         'Priority support',
       ],
-      cta: 'Register Now',
+      cta: 'Talk to Sales',
       ctaHref: '#contact',
       highlight: false,
       popular: true,
     },
     {
       name: 'ENTERPRISE',
-      badge: null,
-      description: 'For organizations with advanced needs',
-      freeTier: null,
+      icon: Building2,
+      tagline: 'Organization-Wide',
+      description: 'Full deployment with dedicated support',
       features: [
-        'Up to 25 Agents',
-        'Up to 10 Workspaces',
-        '1M Interactions/Month',
-        '5 Compliance Reports',
-        'Custom integrations',
+        'Unlimited AI Workflows',
+        'Unlimited workspaces',
+        'Custom risk policies',
+        'Custom compliance mapping',
+        'SSO & advanced security',
         'Dedicated support',
         'SLA guarantees',
       ],
@@ -72,10 +70,11 @@ const Pricing = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-              Simple, Transparent <span className="gradient-text">Pricing</span>
+              Start with a Pilot.{' '}
+              <span className="gradient-text">Scale When Ready.</span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Start free and scale as you grow. No hidden fees, no surprises.
+              The ROI is getting to production. Pick the plan that matches where you are.
             </p>
           </div>
 
@@ -99,39 +98,21 @@ const Pricing = () => {
                   </div>
                 )}
 
-                {/* Badge area - fixed height for all cards */}
-                <div className="h-10 mb-4">
-                  {plan.badge && (
-                    <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-500/20 border border-primary-500/30">
-                      <Sparkles className="h-4 w-4 text-primary-400" />
-                      <span className="text-sm text-primary-400 font-semibold">{plan.badge}</span>
-                    </div>
-                  )}
+                {/* Icon */}
+                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg mb-4 ${
+                  plan.highlight ? 'bg-primary-500/20' : 'bg-slate-100 dark:bg-slate-800'
+                }`}>
+                  <plan.icon className={`h-6 w-6 ${plan.highlight ? 'text-primary-400' : 'text-slate-500 dark:text-slate-400'}`} />
                 </div>
 
                 {/* Plan name */}
-                <h3 className={`text-2xl font-bold mb-2 ${plan.highlight ? 'text-primary-400' : 'text-slate-900 dark:text-white'}`}>
+                <h3 className={`text-2xl font-bold mb-1 ${plan.highlight ? 'text-primary-400' : 'text-slate-900 dark:text-white'}`}>
                   {plan.name}
                 </h3>
+                <p className={`text-lg font-medium mb-2 ${plan.highlight ? 'text-primary-300' : 'text-slate-700 dark:text-slate-300'}`}>
+                  {plan.tagline}
+                </p>
                 <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">{plan.description}</p>
-
-                {/* Free Tier callout for PRO plan */}
-                {plan.freeTier && (
-                  <div className="mb-6 p-4 rounded-lg bg-primary-500/10 border border-primary-500/20">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Sparkles className="h-4 w-4 text-primary-400" />
-                      <span className="text-sm font-semibold text-primary-400">{plan.freeTier.title}</span>
-                    </div>
-                    <ul className="space-y-1">
-                      {plan.freeTier.features.map((feature, index) => (
-                        <li key={index} className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-                          <Check className="h-3 w-3 text-primary-400" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
 
                 {/* Features */}
                 <ul className="space-y-3 mb-8 flex-grow">
@@ -172,10 +153,10 @@ const Pricing = () => {
                   <Sparkles className="h-8 w-8 text-primary-400" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Public Trust Center Add-on</h4>
+                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Public Trust Center</h4>
                   <p className="text-slate-500 dark:text-slate-400">
                     Your AI's public proof of trust. Live health scores, compliance badges, and secure document sharing.
-                    Available for all plans.
+                    Included in Production and Enterprise plans.
                   </p>
                 </div>
               </div>
