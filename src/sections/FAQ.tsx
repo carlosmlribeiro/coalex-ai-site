@@ -6,36 +6,36 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'What is Coalex?',
-      answer: 'Coalex is an AI governance platform that helps you supervise, trust, and comply with AI regulations. We provide real-time monitoring, human-in-the-loop controls, audit trails, and compliance mapping for your AI agents and LLM applications.',
+      question: 'Will this actually get Legal to say yes?',
+      answer: "That's exactly what Coalex is built for. Legal and Risk teams block AI because they can't prove it's safe. With Coalex, you get: automatic blocking of risky decisions, clear audit trails showing who approved what, and compliance documentation mapped to ISO 42001 and EU AI Act. We've helped teams move from 'stuck in pilot' to 'approved for production' by giving them the evidence they need to defend the deployment.",
     },
     {
-      question: 'How does the free tier work?',
-      answer: 'You get 1 AI agent free forever with full supervision capabilities, audit logs, and community support. No credit card required. When you need more agents or advanced features, you can upgrade to a paid plan.',
+      question: 'How long until we see results?',
+      answer: "Most teams are up and running with their first workflow in days, not months. The real question isn't integration time — it's how fast you can schedule that approval meeting with Legal. Once they see the audit trails and blocking controls, you'll have what you need to get sign-off.",
+    },
+    {
+      question: 'Do we need to change our AI infrastructure?',
+      answer: 'No. Coalex works as a governance layer on top of your existing AI infrastructure. We integrate with any LLM provider (OpenAI, Anthropic, etc.) and AI platforms like Dify.ai without requiring you to change how you build or deploy your AI. Think of it as a firewall that wraps around what you already have.',
+    },
+    {
+      question: 'What about EU AI Act compliance?',
+      answer: "The EU AI Act requires deployers of high-risk AI to maintain transparency records, monitor for incidents, and implement risk management. Coalex automatically maps your AI operations to the controls required — including Article 26 requirements for logging and human oversight. We generate the documentation you need for audits so you're not scrambling when regulators ask.",
+    },
+    {
+      question: 'Who does the integration?',
+      answer: "We do. Every Pilot plan includes hands-on integration support. Our team works directly with yours to get Coalex wrapped around your first AI workflow. For Production and Enterprise plans, we provide dedicated implementation support and can work with your existing consultants or system integrators.",
+    },
+    {
+      question: "What's the ROI?",
+      answer: "The ROI is getting to production. How much is that stuck AI pilot costing you? The value you expected from that AI — the efficiency gains, the cost savings, the competitive advantage — is sitting on the shelf because you can't get approval. Coalex is the bridge from 'pilot that works' to 'production deployment that's defended.'",
     },
     {
       question: 'What compliance frameworks do you support?',
-      answer: 'We support ISO 42001 (the global AI management standard), EU AI Act compliance, and map controls that also apply to SOC 2, GDPR, and other frameworks. Our cross-framework approach means you collect evidence once and apply it across multiple compliance requirements.',
+      answer: 'We support ISO 42001 (the global AI management standard), EU AI Act compliance mapping, and controls that also apply to SOC 2 and GDPR. Our cross-framework approach means you collect evidence once and apply it across multiple compliance requirements.',
     },
     {
       question: 'What is a Trust Center?',
-      answer: "A Trust Center is a public-facing page (like trust.yourcompany.com) where your customers can verify your AI's health scores, compliance status, and human oversight metrics in real-time. It helps you close deals faster by providing proof instead of promises.",
-    },
-    {
-      question: 'How long does integration take?',
-      answer: 'Most developers integrate our SDK in minutes. We provide simple APIs and SDKs that wrap around your existing AI agents with minimal code changes. You can start monitoring your first agent the same day you sign up.',
-    },
-    {
-      question: 'Do I need to change my AI infrastructure?',
-      answer: 'No. Coalex works as a governance layer on top of your existing AI infrastructure. We integrate with any LLM provider (OpenAI, Anthropic, etc.) and AI platforms like Dify.ai without requiring you to change how you build or deploy your AI.',
-    },
-    {
-      question: 'What is human-in-the-loop (HITL)?',
-      answer: "Human-in-the-loop means routing certain AI decisions to human reviewers before they're executed. Coalex lets you define policies for when human approval is required — like high-risk outputs, low-confidence responses, or sensitive topics — ensuring humans stay in control.",
-    },
-    {
-      question: 'How do you help with EU AI Act compliance?',
-      answer: 'The EU AI Act requires AI deployers to maintain transparency records, monitor for incidents, and implement risk management. Coalex automatically maps your AI operations to the 150+ controls required, monitors for violations, and generates the documentation you need for audits.',
+      answer: "A Trust Center is a public-facing page (like trust.yourcompany.com) where your customers can verify your AI's health scores, compliance status, and human oversight metrics in real-time. For AI-native companies, it's a sales accelerator — proof instead of promises when customers ask 'is your AI safe?'",
     },
   ];
 
@@ -49,10 +49,10 @@ const FAQ = () => {
               <HelpCircle className="h-8 w-8 text-primary-400" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-              Frequently Asked <span className="gradient-text">Questions</span>
+              Questions You're <span className="gradient-text">Actually Asking</span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300">
-              Everything you need to know about Coalex and AI governance.
+              The questions we hear from heads of AI at regulated companies.
             </p>
           </div>
 
@@ -98,7 +98,7 @@ const FAQ = () => {
               href="#contact"
               className="text-primary-500 dark:text-primary-400 font-semibold hover:underline"
             >
-              Get in touch with our team →
+              Talk to us directly →
             </a>
           </div>
         </div>
