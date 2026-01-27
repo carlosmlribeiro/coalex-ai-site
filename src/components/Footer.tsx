@@ -6,14 +6,12 @@ const Footer = () => {
     product: [
       { label: 'Features', href: '#three-layers' },
       { label: 'Pricing', href: '#pricing' },
-      { label: 'How It Works', href: '#how' },
+      { label: 'How It Works', href: '#three-layers' },
       { label: 'Trust Center', href: '#trust-center' },
     ],
     compliance: [
       { label: 'ISO 42001', href: '#compliance' },
       { label: 'EU AI Act', href: '#compliance' },
-      { label: 'SOC 2', href: '#security' },
-      { label: 'GDPR', href: '#security' },
     ],
     company: [
       { label: 'About', href: 'https://linkedin.com/company/coalex-ai' },
