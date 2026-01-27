@@ -16,15 +16,12 @@ const Footer = () => {
       { label: 'GDPR', href: '#security' },
     ],
     company: [
-      { label: 'About', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Careers', href: '#' },
+      { label: 'About', href: 'https://linkedin.com/company/coalex-ai' },
       { label: 'Contact', href: '#contact' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Cookie Policy', href: '/cookie-policy' },
-      { label: 'Terms of Service', href: '#' },
     ],
   };
 
@@ -116,6 +113,10 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    {...(link.href.startsWith('http') && {
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    })}
                     className="text-slate-400 hover:text-primary-400 transition-colors text-sm"
                   >
                     {link.label}
