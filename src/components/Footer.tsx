@@ -6,25 +6,20 @@ const Footer = () => {
     product: [
       { label: 'Features', href: '#three-layers' },
       { label: 'Pricing', href: '#pricing' },
-      { label: 'How It Works', href: '#how' },
+      { label: 'How It Works', href: '#three-layers' },
       { label: 'Trust Center', href: '#trust-center' },
     ],
     compliance: [
       { label: 'ISO 42001', href: '#compliance' },
       { label: 'EU AI Act', href: '#compliance' },
-      { label: 'SOC 2', href: '#security' },
-      { label: 'GDPR', href: '#security' },
     ],
     company: [
-      { label: 'About', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Careers', href: '#' },
+      { label: 'About', href: 'https://linkedin.com/company/coalex-ai' },
       { label: 'Contact', href: '#contact' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Cookie Policy', href: '/cookie-policy' },
-      { label: 'Terms of Service', href: '#' },
     ],
   };
 
@@ -116,6 +111,10 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    {...(link.href.startsWith('http') && {
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    })}
                     className="text-slate-400 hover:text-primary-400 transition-colors text-sm"
                   >
                     {link.label}

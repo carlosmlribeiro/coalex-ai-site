@@ -46,7 +46,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
             <img
               src={mounted && resolvedTheme === 'light'
                 ? '/coalex/logo-white.png'
