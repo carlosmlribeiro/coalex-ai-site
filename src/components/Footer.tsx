@@ -143,6 +143,22 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* PRR Banner */}
+        <div className="py-8 border-t border-slate-800">
+          <a
+            href="/prr/23203FichadeProjeto.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block hover:opacity-80 transition-opacity"
+          >
+            <img
+              src="/prr/BARRA_LOGOS-02.png"
+              alt="PRR - Plano de Recuperação e Resiliência"
+              className="max-w-[50%] h-auto mx-auto"
+            />
+          </a>
+        </div>
+
         {/* Bottom Bar */}
         <div className="py-6 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
