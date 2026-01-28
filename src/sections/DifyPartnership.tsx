@@ -50,8 +50,8 @@ const DifyPartnership = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button href="#contact" size="lg" className="glow-primary">
-                    Talk to Sales
+                  <Button href="https://meetings.hubspot.com/carlos1047" size="lg" className="glow-primary">
+                    Talk to Us
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   <Button

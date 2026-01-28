@@ -31,13 +31,13 @@ const GetStartedCTA = () => {
             </div>
             <div className="flex flex-col items-center">
               <Button
-                href="https://calendly.com/coalex-ai"
+                href="https://meetings.hubspot.com/carlos1047"
                 variant="outline"
                 size="lg"
                 className="px-10 py-5 text-lg border-slate-300 dark:border-slate-600 text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
               >
                 <MessageSquare className="mr-2 h-5 w-5" />
-                Talk to Sales
+                Talk to Us
               </Button>
               <span className="text-sm text-slate-500 mt-2">For enterprise teams</span>
             </div>
