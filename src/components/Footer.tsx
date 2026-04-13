@@ -144,7 +144,7 @@ const Footer = () => {
 
         {/* PRR Banner */}
         <div className="py-8 border-t border-slate-800">
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex items-center justify-between gap-8">
             <a
               href="/prr/23203FichadeProjeto.pdf"
               target="_blank"
@@ -161,12 +161,12 @@ const Footer = () => {
               href="/iefp/1_AC_Cartaz%20Entidades_DR%20Norte%2C%20Centro%2C%20Lisboa%2C%20Alentejo_2030.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:opacity-80 transition-opacity"
+              className="block hover:opacity-80 transition-opacity ml-auto"
             >
               <img
                 src="/iefp/IEFP_Logo_Branco.png"
                 alt="IEFP - Instituto do Emprego e Formação Profissional"
-                className="h-16"
+                className="max-w-[30%] h-auto ml-auto"
               />
             </a>
           </div>
